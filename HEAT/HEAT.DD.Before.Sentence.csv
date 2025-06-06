@@ -1,0 +1,880 @@
+﻿"Variable / Field Name","Form Name","Section Header","Field Type","Field Label","Choices, Calculations, OR Slider Labels","Field Note","Text Validation Type OR Show Slider Number","Text Validation Min","Text Validation Max",Identifier?,"Branching Logic (Show field only if...)","Required Field?","Custom Alignment","Question Number (surveys only)","Matrix Group Name","Matrix Ranking?","Field Annotation"
+ps_record_id,prescreening,,text,"Record ID",,,,,,,,,,,,,
+ps_date,prescreening,,text,"Date Of Participant Pre-screening",,,date_dmy,,,,,y,,,,,
+ps_time,prescreening,,text,"Time Of Pre-Screening ",,,time,,,,,y,,,,,
+ps_participant_name,prescreening,,text,"Participant Name",,,,,,,,y,,,,,
+ps_participant_age,prescreening,"PRE-SCREENING QUESTIONNAIRE",text,"1. What Is Your Date Of Birth? ",,,date_dmy,,,,,y,,,,,"Must be 60 yrs or older"
+ps_sex,prescreening,,radio,"2. Sex At Birth? ","1, Male | 2, Female",,,,,,,y,,,,,
+ps_weight,prescreening,,text,"3. Approximately How Much Do You Weigh? ",,,,,,,,,,,,,"Must be > 110lbs."
+ps_smoking,prescreening,,checkbox,"4. Do You Use Tobacco Or Marijuana Products? ","1, Tobacco Products | 2, Marijuana Products | 3, None Of These",,,,,,,y,,,,,"Should be None"
+ps_etoh,prescreening,,yesno,"5. Do You Drink Alcohol? ",,,,,,,,y,,,,,
+ps_etoh_yes,prescreening,,text,"5a. If Yes To Question 5, How Many Alcoholic Drinks Do You Consume In A Week? ",,,,,,,"[ps_etoh] = '1'",y,,,,,"(< 8 women) (< 15 men)  "
+ps_exercising,prescreening,,yesno,"6. Do You Exercise At Least 3x A Week For 30mins Or More?  ",,,,,,,,y,,,,,
+ps_exercise_yes,prescreening,,text,"6a. If Yes To Question 6, How Many Times Per Week? ",,,,,,,"[ps_exercising] = '1'",y,,,,,"Should be < 30 minutes, 3 times per week"
+ps_exercise_yes2,prescreening,,text,"6b. How Long Each Time? ",,,,,,,"[ps_exercising] = '1'",y,,,,,"Should be < 30 minutes, 3 times per week"
+ps_latex_allergy,prescreening,,yesno,"7. Are You Allergic To Latex?",,,,,,,,y,,,,,"Should be no"
+ps_lcaine_allergy,prescreening,,yesno,"8. Are You Allergic To Lidocaine?",,,,,,,,y,,,,,
+ps_diabetes,prescreening,,yesno,"9. Have You Been Diagnosed With Diabetes?",,,,,,,,y,,,,,"Should be no"
+ps_ortho_complications,prescreening,,yesno,"10. Do You Have Any Medical Or Orthopedic Complications That Would Make It Dangerous For You To Participate In Cycling, Walking Or Hand Squeezing Exercises? ",,,,,,,,y,,,,,"Should be no"
+ps_ortho_complications_yes,prescreening,,notes,"10a. If Yes To Question 10, Please Specify",,,,,,,"[ps_ortho_complications] = '1'",y,,,,,
+ps_neuropathy,prescreening,,yesno,"11. Do You Have Peripheral Neuropathy?",,,,,,,,y,,,,,"Should be no"
+ps_neuropathy_yes,prescreening,,notes,"11a. If Yes, Specify",,,,,,,"[ps_neuropathy] = '1'",y,,,,,
+ps_healing,prescreening,,yesno,"12. Do You Have Slow Wound Healing?",,,,,,,,y,,,,,
+ps_healing_yes,prescreening,,notes,"12a. If Yes, Specify",,,,,,,"[ps_healing] = '1'",y,,,,,
+ps_current_meds,prescreening,,checkbox,"13. Do You Take  Any Of The Following:","1, OPIOIDS - (ex: Morphine, Codeine, Hydrocodone, Oxycodone, Fentanyl etc.) | 2, BENZODIAZEPINES - (ex: Xanxax, Valium, Clonazepam, Lorazepam etc.) | 3, CORTICOSTEROIDS - (ex: Prednisone, Prednisolone, Methylprednisolone, Hydrocortisone etc.) | 4, BETA BLOCKERS - (ex: Atenolol, Metoprolol, Propanolol, Carvedilol, Labetalol, Bisoprolol etc.) | 5, INSULIN | 6, METFORMIN | 7, GLP 1 RECEPTOR AGONISTS - (ex: Trulicity, Ozempic, Mounjaro, Victoza etc.) | 8, ANICOAGULANTS a.k.a. BLOOD THINNERS (ex: Warfarin, Enoxaparin, Heparin etc.) | 9, SULFONYLUREAS - (ex: Glipizide, Glyburide, Glimepiride Tolutamide etc.) | 10, IMMUNOSUPPRESSANTS (ex: Cyclosporine, Rapamycin, Tacrolimus etc.) | 11, NONE OF THESE",,,,,,,y,,,,,"Should be NO"
+cs_date,consentscreening,,text,"Consent/Screening Visit Date",,,date_dmy,,,,,y,,,,,
+cs_time,consentscreening,,text,"Time Of Consent/Screening",,,time,,,,,y,,,,,
+cs_participant_show,consentscreening,,yesno,"1. Did Participant Show Up To Screening/Consent Visit?",,,,,,,,y,,,,,
+cs_why_no_show,consentscreening,,notes,"1a. If Participant Did Not Show To Consent/Screening Visit, Why Not?",,,,,,,"[cs_participant_show] = '0'",y,,,,,
+cs_fasting,consentscreening,,yesno,"2. Did Participant Fast (No Food, Drinks or Supplements Except For Water) for 12 Hours Before The Consent/Screening Visit?",,,,,,,,y,,,,,
+cs_video,consentscreening,,yesno,"3. Did Participant Watch The Consent Form Video?",,,,,,,,y,,,,,
+cs_form_signing,consentscreening,,radio,"4. Did The Participant Sign The Consent Form? ","1, Yes | 2, No | 3, Participant Took Consent Form Home To Look Over",,,,,,,y,,,,,
+cs_not_signed,consentscreening,,notes,"4a. If Participant Did Not Sign The Consent Form, Why Not? ",,,,,,,"[cs_form_signing] = '2'",y,,,,,
+cs_follow_up_date,consentscreening,,text,"4b. Follow-Up Date To Verify Participation In The Trial",,,date_dmy,,,,"[cs_form_signing] = '3'",y,,,,,
+cs_wet_ink_upload,consentscreening,,file,"5. Signed Consent Form",,,,,,,,y,,,,,
+cs_take_home_copy,consentscreening,,yesno,"6. Was A Copy Of The Consent Form Given To The Participant?",,,,,,,,y,,,,,
+cs_take_home_not_given,consentscreening,,notes,"6a. If No To question 6, Please Explain",,,,,,,"[cs_take_home_copy] = '0'",y,,,,,
+demo_name,demographics,,text,"1. Participant Name",,,,,,y,,y,,,,,
+demo_dob,demographics,,text,"2. Participant D.O.B.",,,date_dmy,,,,,y,,,,,
+demo_sex,demographics,,radio,"3. Participant Sex","1, Male | 2, Female",,,,,,,y,,,,,
+demo_race,demographics,,checkbox,"4. Participant Race","1, Asian | 2, Black or African American | 3, White or Caucasian | 4, Mexican or Chicano | 5, Native American or Alaska Native | 6, Pacific Islander or Native Hawaiian | 7, Middle Eastern | 8, Other",,,,,,,y,,,,,
+demo_race_other,demographics,,text,"4a. If ""Other"", Please Specify",,,,,,,"[demo_race(8)] = '1'",y,,,,,
+demo_ethnicity,demographics,,radio,"5. Ethnicity","1, Hispanic or Latino | 2, Not Hispanic or Latino",,,,,,,y,,,,,
+medhx_instructions,medical_history_questionnaire,,descriptive,"<div class=""rich-text-field-label""><h6><span style=""text-decoration: underline;"">Tell The Participant:</span></h6> <h6>-Next, we'll need to gather your medical information including any illnesses, medications currently taking, any allergies and past history of surgeries to help understand your overall health and identify any potential risk factors or complications before the study treatment begins. Try to be as accurate and detailed as possible when answering the questions.</h6></div>",,,,,,,,,,,,,
+medhx_height,medical_history_questionnaire,,text,"1. Participant Height (ft./in.)",,,,,,,,y,,,,,
+medhx_weight,medical_history_questionnaire,,text,"2. Participant Weight (lbs.)",,,,,,,,y,,,,,
+medhx_heart_condition,medical_history_questionnaire,,yesno,"3. Has Your Doctor Ever Said That You Have A Heart Condition? ",,,,,,,,y,,,,,
+medhx_dr_recommend,medical_history_questionnaire,,yesno,"4. Has Your Doctor Ever Said That You Should Only Do Physical Activity Recommended By A Doctor?",,,,,,,,y,,,,,
+medhx_sports_restrictions,medical_history_questionnaire,,yesno,"5. Has Your Doctor Ever Denied Or Restricted Your Participation In Sports Or Exercise For Any Reason?",,,,,,,,y,,,,,
+medhx_symptoms,medical_history_questionnaire,,checkbox,"6. Have You Ever Experienced Any Of The Following Symptoms:","1, Discomfort, Pressure, Or Pain In Your Chest, Neck, Jaw, Arms, Calves, Or Other Areas Potentially Related To Ischemia | 2, Shortness Of Breath At Rest Or With Mild Exertion | 3, Dizziness Or Fainting (Syncope) | 4, Difficulty Breathing While Lying Flat (Orthopnea) Or Sudden Nighttime Breathing Difficulties (Paroxysmal Nocturnal Dyspnea) | 5, Swelling In Your Ankles (Edema) | 6, Palpitations Or Rapid Heartbeat (Tachycardia) | 7, Pain Or Cramping In Your Legs During Physical Activity | 8, A Known Heart Murmur | 9, Unusual Fatigue Or Shortness Of Breath During Routine Activities Or At Rest | 10, None Of The Above",,,,,,,y,,,,,Yes=DQ
+medhx_q6_notes,medical_history_questionnaire,,notes,"6a. If Yes To Any Of The List In Question 6, Please Explain",,,,,,,"[medhx_symptoms(1)] = '1' or [medhx_symptoms(2)] = '1' or [medhx_symptoms(3)] = '1' or [medhx_symptoms(4)] = '1' or [medhx_symptoms(5)] = '1' or [medhx_symptoms(6)] = '1' or [medhx_symptoms(7)] = '1' or [medhx_symptoms(8)] = '1' or [medhx_symptoms(9)] = '1'",y,,,,,
+medhx_known_history,medical_history_questionnaire,,checkbox,"7. Do You Have A Known History Of The Following:","1, Slow Wound Healing | 2, Taking Immunosuppressive Medications | 3, Diagnosis Of Sickle Cell Disease | 4, No",,,,,,,y,,,,,Yes=DQ
+medhx_q7_notes,medical_history_questionnaire,,notes,"7a. If Yes To Any Of The List In Question 7, Please Explain",,,,,,,"[medhx_known_history(1)] = '1' or [medhx_known_history(2)] = '1' or [medhx_known_history(3)] = '1'",y,,,,,
+medhx_short_of_breath,medical_history_questionnaire,,yesno,"8. Do You Ever Feel Short Of Breath Or Have Trouble Breathing At Night, At Rest, Or With Light Exertion?",,,,,,,,y,,,,,Yes=DQ
+medhx_blood_thinner,medical_history_questionnaire,,yesno,"9. Are You Prescribed Any Blood Thinner Medications (e.g., Warfarin, Coumadin, Clopidogrel, Apixaban, Aspirin* etc.)?",,,,,,,,y,,,,,Yes=DQ
+medhx_heart_disease,medical_history_questionnaire,,yesno,"10. Have You Ever Been Diagnosed With A Disease Of Your Heart Or Blood Vessels (including Stroke), Other Than High Blood Pressure?",,,,,,,,y,,,,,Yes=DQ
+medhx_blood_pressure,medical_history_questionnaire,,yesno,"11. Have You Been Diagnosed With High Blood Pressure?",,,,,,,,y,,,,,
+medhx_bp_controlled,medical_history_questionnaire,,yesno,"11a. If ""Yes"" To Question 11, Is Your Blood Pressure Currently Controlled (i.e., With Medications, Diet, etc.)?",,,,,,,"[medhx_blood_pressure] = '1'",y,,,,,No=DQ
+medhx_diabetes,medical_history_questionnaire,,yesno,"12. Have You Ever Been Diagnosed With Diabetes (Type 1 or Type 2)?",,,,,,,,y,,,,,Yes=DQ
+medhx_ankle_swelling,medical_history_questionnaire,,yesno,"13. Do You Have Unexplained Swelling In Your Ankles?",,,,,,,,y,,,,,Yes=DQ
+medhx_q13_notes,medical_history_questionnaire,,notes,"13a. If Yes To Question 13, Please Explain",,,,,,,"[medhx_ankle_swelling] = '1'",y,,,,,
+medhx_unusual_fatigue,medical_history_questionnaire,,yesno,"14. Do You Experience Unusual Fatigue During Usual Activities?",,,,,,,,y,,,,,Yes=DQ
+medhx_q14_notes,medical_history_questionnaire,,notes,"14a. If Yes To Question 14, Please Explain",,,,,,,"[medhx_unusual_fatigue] = '1'",y,,,,,
+medhx_dizziness,medical_history_questionnaire,,yesno,"15. Do You Lose Your Balance Because Of Dizziness",,,,,,,,y,,,,,Yes=DQ
+medhx_q15_notes,medical_history_questionnaire,,notes,"15a. If Yes To Question 15, Please Explain",,,,,,,"[medhx_dizziness] = '1'",y,,,,,
+medhx_consciousness,medical_history_questionnaire,,yesno,"16. Do You Ever Lose Consciousness?",,,,,,,,y,,,,,
+medhx_q16_notes,medical_history_questionnaire,,notes,"16a. If Yes To Question 16, Please Explain",,,,,,,"[medhx_consciousness] = '1'",,,,,,
+medhx_cancer_diagnosed,medical_history_questionnaire,,yesno,"17. Have You Ever Been Diagnosed With Cancer?",,,,,,,,y,,,,,
+medhx_q17_notes,medical_history_questionnaire,,notes,"17a. If Yes To Question 17, What Type(s)? Treatment begin/end dates?",,,,,,,"[medhx_cancer_diagnosed] = '1'",y,,,,,
+medhx_orthopedic_injuries,medical_history_questionnaire,,yesno,"18. Do You Currently Have Any Orthopedic Injuries Or Problems?",,,,,,,,y,,,,,
+medhx_q18_notes,medical_history_questionnaire,,notes,"18a. If ""Yes"" to question 18, Please Describe",,,,,,,"[medhx_orthopedic_injuries] = '1'",y,,,,,
+medhx_kidney_disease,medical_history_questionnaire,,yesno,"19. Have You Ever Been Diagnosed With Kidney Disease?",,,,,,,,y,,,,,Yes=DQ
+medhx_q19_notes,medical_history_questionnaire,,notes,"19a. If ""Yes"" to question 19, Please Describe",,,,,,,"[medhx_kidney_disease] = '1'",y,,,,,
+medhx_asthma_lung_problems,medical_history_questionnaire,,radio,"20. Do You Have Asthma Or Any Other Lung Problem?","1, Asthma | 2, Lung Problems | 3, None Of These",,,,,,,y,,,,,
+medhx_q20_notes,medical_history_questionnaire,,notes,"20a. If You Do Have Lung Problems, Please Describe",,,,,,,"[medhx_asthma_lung_problems] = '2'",y,,,,,
+medhx_neuropathy,medical_history_questionnaire,,yesno,"21. Do You Currently Have Neuropathy?",,,,,,,,y,,,,,Yes=DQ
+medhx_other_illness,medical_history_questionnaire,,yesno,"22. Have You Had Any Other Significant Illnesses Not Listed Above?",,,,,,,,y,,,,,
+medhx_q22_notes,medical_history_questionnaire,,notes,"22a. Please Describe Significant Illnesses",,,,,,,"[medhx_other_illness] = '1'",y,,,,,
+medhx_latex_allergy,medical_history_questionnaire,,yesno,"23. Are You Allergic To Latex ?",,,,,,,,y,,,,,"If allergic to lidocaine=DQ, If yes to latex alert PI so that accomodations can be made"
+medhx_lido_allergy,medical_history_questionnaire,,yesno,"24. Are You Allergic To Lidocaine?",,,,,,,,y,,,,,"If allergic to lidocaine=DQ, If yes to latex alert PI so that accomodations can be made"
+medhx_tobacco,medical_history_questionnaire,,yesno,"25. Do You Use Any Tobacco Products?",,,,,,,,y,,,,,Yes=DQ
+medhx_cannabis,medical_history_questionnaire,,yesno,"26. Do You Use Any Cannabis Products?",,,,,,,,y,,,,,Yes=DQ
+medhx_current_illness,medical_history_questionnaire,,yesno,"27. Do You Currently Have Any Illness?",,,,,,,,y,,,,,"If ""yes"" and condition is acute, advise participant to reach out once illness is resolved."
+medhx_q27_notes,medical_history_questionnaire,,notes,"27a. What Illnesses Do You Currently Have?",,,,,,,"[medhx_current_illness] = '1'",y,,,,,
+medhx_pregnancy,medical_history_questionnaire,,yesno,"28. Are You Currently Pregnant Or Do You Plan To Become Pregnant Within The Next 7 Months? ",,,,,,,,y,,,,,"If ""yes"", participant is disqualified and probably not 60+ years old."
+medhx_perform_activity,medical_history_questionnaire,,notes,"29. Do You Know Of Any Other Reason Why You Should Not Do Physical Activity? Describe",,,,,,,,y,,,,,"If answer indicates contraindication or unwillingness, participant is DQ."
+medhx_allergies,medical_history_questionnaire,,notes,"30. Please List All Allergies You Have. (The Substance & Reaction)",,,,,,,,y,,,,,"If lidocaine is listed, DQ. For all others, we will make accommodations where possible, and if not possible, DQ."
+medhx_alcohol,medical_history_questionnaire,,yesno,"31. Do You Drink Alcoholic Beverages?",,,,,,,,y,,,,,
+medhx_drinks_per_week,medical_history_questionnaire,,text,"31a. If Yes To Question 31, How Many Drinks Per Week On Average?",,,number,0,100,,"[medhx_alcohol] = '1'",y,,,,,
+medhx_past_injuries,medical_history_questionnaire,,checkbox,"32. Please Check The Box Next To Any Of The Following Body Parts You Have Injured In The Past And Provide Details.","1, Head | 2, Neck | 3, Upper Back | 4, Lower Back | 5, Chest | 6, Hip | 7, Thigh | 8, Knee | 9, Ankle | 10, Foot | 11, Calf/Shin | 12, Shoulder | 13, Upper Arm | 14, Elbow | 15, Hand/Fingers | 16, None",,,,,,,y,,,,,
+medhx_q32_notes,medical_history_questionnaire,,notes,"32a. Provide Details Of Any Body Parts You Have Injured",,,,,,,"[medhx_past_injuries(1)] = '1' or [medhx_past_injuries(2)] = '1' or [medhx_past_injuries(3)] = '1' or [medhx_past_injuries(4)] = '1' or [medhx_past_injuries(5)] = '1' or [medhx_past_injuries(6)] = '1' or [medhx_past_injuries(7)] = '1' or [medhx_past_injuries(8)] = '1' or [medhx_past_injuries(9)] = '1' or [medhx_past_injuries(10)] = '1' or [medhx_past_injuries(11)] = '1' or [medhx_past_injuries(12)] = '1' or [medhx_past_injuries(13)] = '1' or [medhx_past_injuries(14)] = '1' or [medhx_past_injuries(15)] = '1'",y,,,,,
+medhx_current_injuries,medical_history_questionnaire,,yesno,"33. Do You Currently Have Any Injuries That Are Bothering You?",,,,,,,,y,,,,,
+medhx_q33_notes,medical_history_questionnaire,,notes,"33a. What Injuries Are Currently Bothering You?",,,,,,,"[medhx_current_injuries] = '1'",y,,,,,
+medhx_current_work,medical_history_questionnaire,,yesno,"34. Do You Currently Work, Either For Pay Or As A Volunteer?",,,,,,,,y,,,,,
+medhx_work_type,medical_history_questionnaire,,radio,"34a. If ""Yes"" To Question 34. Is Your Work:","1, Sedentary (No Exercise) | 2, Inactive-Occasional Light Activity (Walking) | 3, Active-Regular Light Activity and/or Occasional Vigorous Activity (Heavy Lifting, Running, etc.) | 4, Heavy Work-Regular Vigorous Activity",,,,,,"[medhx_current_work] = '1'",y,,,,,
+medhx_regular_activities,medical_history_questionnaire,,notes,"35. List Your Regular Physical Activities",,,,,,,,y,,,,,
+meddhx_activities_performed,medical_history_questionnaire,,text,"35a. How Often Do You Perform These Activities?",,,,,,,,y,,,,,"ex: once a day, twice a week, once a month etc.)"
+medhx_activity_duration,medical_history_questionnaire,,text,"35b. How Long Do You Do You Perform These Activities?",,,,,,,,y,,,,,"ex: 2mins, every 45mins, 1hr each etc."
+medhx_activities_started,medical_history_questionnaire,,text,"35c. How Long Ago Did You Start These Activities?",,,,,,,,y,,,,,"ex: yesterday, 2yrs ago, 3 weeks ago etc.)"
+medhx_special_diet,medical_history_questionnaire,,notes,"36. Do You Adhere To Any Special Diet (i.e., Vegetarian, Vegan, Paleo, Atkins, etc.)? If Yes, Please Describe.",,,,,,,,y,,,,,
+medhx_water_consumption,medical_history_questionnaire,,text,"37. On Average, How Much Water, In Cups, Do You Drink Each Day? (In Ounces)",,"(1 cup = 8oz)",,,,,,y,,,,,
+medhx_born_preterm,medical_history_questionnaire,,yesno,"38. Were You Born Pre-Term?",,,,,,,,y,,,,,
+medhx_pre_term_answer,medical_history_questionnaire,,radio,"38a. If Yes To Question 38, When?","1, < 28 Weeks | 2, 28 - 32 Weeks | 3, 33 - 37 Weeks | 4, I Don't Know",,,,,,"[medhx_born_preterm] = '1'",y,,,,,
+medhx_current_meds,medical_history_questionnaire,,notes,"39. Please List All Medications You Are Currently Taking. Make Sure To Include Over-The-Counter Medications and Any Hormone Replacement.																		",,,,,,,,y,,,,,"DQ for: corticosteroids, opiates, benzodiazepines, tricyclic antidepressants, beta blockers, sulfonylureas, insulin, metformin, anticoagulants, barbiturates, insulin sensitizers, fibrates [PPAR gamma agonist]"
+medhx_current_med_dose,medical_history_questionnaire,,notes,"39a. Please List All Medication Doses. Make Sure To Include Over-The-Counter Medications And Any Hormone Replacement.",,,,,,,,y,,,,,"Ex: 1mg, 250mg, 500mg, 100mg etc."
+medhx_current_med_frequency,medical_history_questionnaire,,notes,"39b. Please List All Medication Frequency Make Sure To Include Over-The-Counter Medications And Any Hormone Replacement.",,,,,,,,y,,,,,"Ex: once a day (qd), twice a day (bid), three times a day (tid), once a month etc."
+fpa_assessment_date,finger_prick_assessment,,text,"Finger Prick Assessment Date",,,date_dmy,,,,,y,,,,,
+fpa_assessment_time,finger_prick_assessment,,text,"Time Of Finger Prick Assessment",,,time,,,,,y,,,,,
+fpa_for_visit,finger_prick_assessment,,yesno,"1. Did Participant Fast Prior To Visit?",,,,,,,,y,,,,,
+fpa_blood_glucose,finger_prick_assessment,,yesno,"2. Was Participant Fasting Blood Glucose Completed?",,,,,,,"[fpa_for_visit] = '1'",y,,,,,
+fpa_glucose_results,finger_prick_assessment,,text,"2a. Participant Fasting Blood Glucose Results (mg/dL)",,,number,,,,"[fpa_blood_glucose] = '1'",y,,,,,
+fpa_reschedule,finger_prick_assessment,,text,"2b. When Will Participant Return To Complete Fasting Blood Glucose",,,date_dmy,,,,"[fpa_hba1c] = '0'",y,,,,,
+fpa_glucose_met,finger_prick_assessment,,yesno,"3. Does Participant Meet Criteria For Prediabetes (Fasting Blood Glucose 100-125 mg/dl)",,,,,,,"[fpa_glucose_results] = '100-125'",y,,,,,
+fpa_hba1c,finger_prick_assessment,,yesno,"4. Was Participant HbA1c Completed?",,,,,,,"[fpa_for_visit] = '1'",y,,,,,
+fpa_hba1c_results,finger_prick_assessment,,text,"4a. Participant HbA1c Results (mmol/mol)",,,number,,,,"[fpa_hba1c] = '1'",y,,,,,
+fpa_hba1c_reschedule,finger_prick_assessment,,text,"4b. When Will Participant Return To Complete HbA1c Testing?",,,date_dmy,,,,"[fpa_hba1c] = '0'",y,,,,,
+fpa_hba1met,finger_prick_assessment,,yesno,"4c. Does Participant Meet Criteria For Prediabetes (Hemoglobin A1c 5.7-6.4%)",,,,,,,"[fpa_hba1c_results] = '5.7-6.4'",y,,,,,
+usound_instructions,ultrasound,,descriptive,"<div class=""rich-text-field-label""><h6><span style=""text-decoration: underline;""><span style=""font-weight: normal;"">Tell The Participant:</span></span><br /><span style=""font-weight: normal;"">-Now we are going to perform an ultrasound on your thigh to measure the amount of fat over the muscle to ensure the amount of fat isnt more than 1.5'' deep and this is to ensure the numbing medicine can reach your thigh muscle. </span></h6></div>",,,,,,,,,,,,,
+usound_date,ultrasound,,text,"Date Of Ultrasound",,,date_dmy,,,,,y,,,,,
+usound_time,ultrasound,,text,"Time Of Ultrasound",,,time,,,,,y,,,,,
+usound_fat_depth,ultrasound,,yesno,"1. Was The Amount Of Fat Over The Participant's Muscle More Than 1.5"" Deep?",,,,,,,,y,,,,,
+usound_depth_amount,ultrasound,,text,"2. What Is The Depth Of Fat Over Muscle?",,,,,,,"[usound_fat_depth] = '1' and [usound_fat_depth] = '0'",y,,,,,
+usound_comments,ultrasound,,notes,Comments:,,,,,,,,,,,,,
+inclusion_1,inclusionexclusion_criteria,,radio,"1. Age ≥ 60 years","1, Yes | 2, No",,,,,,,y,,,inclusion_exclusion,,
+inclusion_2,inclusionexclusion_criteria,,radio,"2. Sedentary (structured exercise < 30 minutes, 3x/week)","1, Yes | 2, No",,,,,,,y,,,inclusion_exclusion,,
+inclusion_3,inclusionexclusion_criteria,,radio,"3. Body weight is at least 110 lbs","1, Yes | 2, No",,,,,,,y,,,inclusion_exclusion,,
+inclusion_4,inclusionexclusion_criteria,,radio,"4. Meet criteria for prediabetes (fasting blood glucose 100-125 mg/dl, hemoglobin A1c 5.7-6.4%)","1, Yes | 2, No",,,,,,,y,,,inclusion_exclusion,,
+inclusion_5,inclusionexclusion_criteria,,radio,"5. Consume < 8 (women) or < 15 (men) alcohol-containing beverages per week","1, Yes | 2, No",,,,,,,y,,,inclusion_exclusion,,
+inclusion_6,inclusionexclusion_criteria,,radio,"6. Do not use tobacco or cannabis","1, Yes | 2, No",,,,,,,y,,,inclusion_exclusion,,
+inclusion_7,inclusionexclusion_criteria,,radio,"7. Not taking any medications that could interfere with responses to the interventions (e.g., corticosteroids, opiates, benzodiazepines, tricyclic antidepressants, beta blockers, sulfonylureas, insulin, metformin, anticoagulants, barbiturates, insulin sensitizers, fibrates, immunosuppressants). If you don't know, that's okay. We'll ask what medications you are on and check whether they fall into one of these categories.","1, Yes | 2, No",,,,,,,y,,,inclusion_exclusion,,
+exclusion_1,inclusionexclusion_criteria,,radio,"1. History of peripheral neuropathies","1, Yes | 2, No",,,,,,,y,,,inclusion_exclusion,,
+exclusion_2,inclusionexclusion_criteria,,radio,"2. Currently taking prescription blood thinners","1, Yes | 2, No",,,,,,,y,,,inclusion_exclusion,,
+exclusion_3,inclusionexclusion_criteria,,radio,"3. Medical complications that could would contraindicate participation in the high intensity interval training (HIIT) intervention including: orthopedic complications that would limit your ability to perform cycling exercise, significant cardiovascular impairments (e.g., history of arrhythmias, severe uncontrolled hypertension, etc.), diagnosed metabolic disease (e.g., diabetes), renal disease, sickle cell anemia, or cancer in remission for < 6 months.","1, Yes | 2, No",,,,,,,y,,,inclusion_exclusion,,
+exclusion_4,inclusionexclusion_criteria,,radio,"4. Known history of slow wound healing","1, Yes | 2, No",,,,,,,y,,,inclusion_exclusion,,
+exclusion_5,inclusionexclusion_criteria,,radio,"5. Lidocaine allergy","1, Yes | 2, No",,,,,,,y,,,inclusion_exclusion,,
+exclusion_6,inclusionexclusion_criteria,,radio,"6. Latex allergy","1, Yes | 2, No",,,,,,,y,,,inclusion_exclusion,,
+exclusion_7,inclusionexclusion_criteria,,radio,"7. Currently pregnant","1, Yes | 2, No",,,,,,,y,,,inclusion_exclusion,,
+exclusion_8,inclusionexclusion_criteria,,radio,"8. >1.5"" subcutaneous fat over the thigh muscle","1, Yes | 2, No",,,,,,,y,,,inclusion_exclusion,,
+exclusion_9,inclusionexclusion_criteria,,radio,"9. Symptoms suggestive of cardiovascular, respiratory, metabolic, or renal diseases including discomfort, pressure, or pain in your chest, neck, jaw, arms, calves, or other areas potentially related to ischemia; shortness of breath at rest or with mild exertion; dizziness or fainting (syncope); difficulty breathing while lying flat (orthopnea) or sudden nighttime breathing difficulties (paroxysmal nocturnal dyspnea); palpitations or rapid heartbeat (tachycardia); pain or cramping in your legs during physical activity (intermittent claudication); a known heart murmur; swelling in your ankles (edema); unusual fatigue or shortness of breath during routine activities or at rest.","1, Yes | 2, No",,,,,,,y,,,inclusion_exclusion,,
+inclusion_exclusion_eligible,inclusionexclusion_criteria,,yesno,"10. Is Participant Eligible To Enroll In The Trial By Meeting All Of The Inclusion Criteria And None Of The Exclusion Criteria?",,,,,,,,y,,,,,
+ineligibility_reason,inclusionexclusion_criteria,,notes,"11. If No, Why Not?",,,,,,,"[inclusion_exclusion_eligible] = '0'",,,,,,
+hydra_assess_date,hydration_assessment,,text,"Date Hydration Assessment Performed",,,date_mdy,,,,,y,,,,,
+hydra_assess_time,hydration_assessment,,text,"Time Hydration Assessment Performed",,,time,,,,,y,,,,,
+hydra_assess_gravity,hydration_assessment,,yesno,"1. Was Participant Urine Specific Gravity Less Than 1.020?",,,,,,,,y,,,,,
+hydra_assess_value,hydration_assessment,,text,"1a. What Was Participants Urine Specific Gravity?",,,,,,,"[hydra_assess_gravity] = '0' or [hydra_assess_gravity] = '1'",y,,,,,
+hydra_assess_urine_color,hydration_assessment,,radio,"1b. What Was The Participant Urine Color In Comparison To The Chart?","1, 1 | 2, 2 | 3, 3 | 4, 4 | 5, 5 | 6, 6 | 7, 7 | 8, 8",,,,,,"[hydra_assess_gravity] = '0' or [hydra_assess_gravity] = '1'",y,,,,,
+hydra_assess_assessor,hydration_assessment,,text,"2. Name Of Personnel Who Assessed Participants Urine Color",,,,,,,"[hydra_assess_urine_color] = '1' or [hydra_assess_urine_color] = '2' or [hydra_assess_urine_color] = '3' or [hydra_assess_urine_color] = '4' or [hydra_assess_urine_color] = '5' or [hydra_assess_urine_color] = '6' or [hydra_assess_urine_color] = '7' or [hydra_assess_urine_color] = '8'",y,,,,,
+hydra_assess_thirst_scale,hydration_assessment,,yesno,"3. Was Thirst Sensation Assessed Using The Thirst Scale?",,,,,,,,y,,,,,
+hydra_assess_thirst_sensation,hydration_assessment,,radio,"3a. What Was Participant Thirst Sensation According To Thirst Scale?","1, 1 - Not Thirsty At All | 2, 2 | 3, 3 - A Little Thirsty | 4, 4 | 5, 5 - Moderately Thirsty | 6, 6 | 7, 7 - Very Thirsty | 8, 8 | 9, 9 - Very, Very Thirsty",,,,,,"[hydra_assess_thirst_scale] = '1'",y,,,,,
+hydra_assess_q3_notes,hydration_assessment,,notes,"3a. If No To Question 3, Please Explain?",,,,,,,"[hydra_assess_thirst_scale] = '0'",y,,,,,
+hydra_assess_sufficient,hydration_assessment,,yesno,"4. Was Participant Sufficiently Hydrated According To Thirst Scale?",,,,,,,,y,,,,,
+hydra_assess_water_given,hydration_assessment,,yesno,"5. Did Participant Have To Be Given 8oz Of Water To Drink?",,,,,,,"[hydra_assess_sufficient] = '0'",y,,,,,
+hydra_assess_urine_retest,hydration_assessment,,yesno,"6. Did Participant Need To Provide A Second Urine Sample To Re-Test Hydration?",,,,,,,"[hydra_assess_water_given] = '1' or [hydra_assess_water_given] = '0'",y,,,,,
+hydra_assess_urine_retest_result,hydration_assessment,,radio,"6a. What Was The Participant Urine Color In Comparison To The Chart After Re-Assessment?","1, 1 | 2, 2 | 3, 3 | 4, 4 | 5, 5 | 6, 6 | 7, 7 | 8, 8",,,,,,"[hydra_assess_urine_retest] = '1'",y,,,,,
+hydra_assess_thirst_retest,hydration_assessment,,yesno,"8. Did Participant Have Thirst Sensation Re-Assessed Using The Thirst Scale?",,,,,,,"[hydra_assess_urine_retest_result] = '1' or [hydra_assess_urine_retest_result] = '2' or [hydra_assess_urine_retest_result] = '3' or [hydra_assess_urine_retest_result] = '4' or [hydra_assess_urine_retest_result] = '5' or [hydra_assess_urine_retest_result] = '6' or [hydra_assess_urine_retest_result] = '7' or [hydra_assess_urine_retest_result] = '8'",y,,,,,
+hydra_assess_thirst_scale_2,hydration_assessment,,radio,"8a. Was Participant Sufficiently Hydrated According To Thirst Scale After Re-Assessment?","1, 1 - Not Thirsty At All | 2, 2 | 3, 3 - A Little Thirsty | 4, 4 | 5, 5 - Moderately Thirsty | 6, 6 | 7, 7 - Very Thirsty | 8, 8 | 9, 9 - Very, Very Thirsty",,,,,,"[hydra_assess_thirst_retest] = '1'",y,,,,,
+hydra_assess_q9_notes,hydration_assessment,,notes,"8b. If No To Question 8, Please Explain",,,,,,,"[hydra_assess_thirst_retest] = '0'",,,,,,
+hydra_assess_comments,hydration_assessment,,notes,Comments:,,,,,,,,,,,,,
+anthromeasure_instructions,anthropometric_measurements,,descriptive,"<div class=""rich-text-field-label""><h6><span style=""text-decoration: underline;""><span style=""font-weight: normal;"">Tell The Participant</span>:</span></h6> <h6>-Now we are going to get your <span style=""font-weight: normal;"">anthropometric measurements</span> Including your <span style=""text-decoration: underline;"">height</span>, <span style=""text-decoration: underline;"">weight</span>, <span style=""text-decoration: underline;"">waist </span>and <span style=""text-decoration: underline;"">hip</span> measurements as well as your <span style=""text-decoration: underline;"">Body Mass Index (BMI)</span> and we're also going to perform a full body scan using dual-energy X-ray</h6></div>",,,,,,,,,,,,,
+anthromeasure_date,anthropometric_measurements,,text,"Date Anthropometric Measurements Taken",,,date_dmy,,,,,y,,,,,
+anthromeasure_time,anthropometric_measurements,,text,"Time Anthropometric Measurements Taken",,,time,,,,,y,,,,,
+anthromeasure_calibrate,anthropometric_measurements,,yesno,"1. Was Stadiometer Calibrated Before Use?",,,,,,,,y,,,,,
+anthromeasure_disinfect1,anthropometric_measurements,,yesno,"2. Was Stadiometer and Tape Measure Disinfected Before Use?",,,,,,,,y,,,,,
+anthromeasure_shoe_removal,anthropometric_measurements,,yesno,"3. Did Participant Remove Shoes Before Having Height and Weight Measured?",,,,,,,,y,,,,,
+anthromeasure_height,anthropometric_measurements,,text,"4. Participant Height (cm.)",,,number,,,,,y,,,,,
+anthromeasure_weight,anthropometric_measurements,,text,"5. Participant Weight (kg.)",,,,,,,,y,,,,,
+anthromeasure_bmi,anthropometric_measurements,,calc,"6. Participant Body Mass Index (BMI)",[anthromeasure_weight]/(([anthromeasure_height]/100)^2),,,,,,,y,,,,,
+anthromeasure_waist,anthropometric_measurements,,text,"7. Participant Waist Measurement (cm.)",,,,,,,,,,,,,
+anthromeasure_hip,anthropometric_measurements,,text,"8. Participant Hip Measurement (cm.)",,,,,,,,,,,,,
+anthromeasure_waist_hip_ratio,anthropometric_measurements,,calc,"9. Waist/Hip Ratio",[anthromeasure_waist]/[anthromeasure_hip],,,,,,,,,,,,
+anthromeasure_disinfect2,anthropometric_measurements,,yesno,"10. Was Stadiometer and Tape Measure Disinfected After Use?",,,,,,,,y,,,,,
+anthromeasure_comments,anthropometric_measurements,,notes,Comments:,,,,,,,,,,,,,
+dexa_date,dualenergy_xray_absorptiometry_dexa,,text,"Date DEXA Scan Performed",,,date_dmy,,,,,y,,,,,
+dexa_time,dualenergy_xray_absorptiometry_dexa,,text,"Time Dexa Scan Performed",,,time,,,,,y,,,,,
+dexa_calibration,dualenergy_xray_absorptiometry_dexa,,radio,"1. Was DEXA Scanner Calibrated Prior To Participant Arrival?","1, 1. Yes | 2, 2. No",,,,,,,y,,,,,
+dexa_disinfected,dualenergy_xray_absorptiometry_dexa,,radio,"2. Was DEXA Scanner And Bed Sanitized and Disinfected Before Use?","1, Yes | 2, No",,,,,,,y,,,,,
+dexa_risk_form_signing,dualenergy_xray_absorptiometry_dexa,,radio,"3. Did Participant Sign The DEXA Acknowledgment Of Risk Form?","1, 1. Yes | 2, 2. No",,,,,,,y,,,,,
+dexa_pregnant_status,dualenergy_xray_absorptiometry_dexa,,radio,"4. If Female, Is Participant Pregnant?","1, Yes | 2, No",,,,,,,y,,,,,
+dexa_info_interface,dualenergy_xray_absorptiometry_dexa,,radio,"5. Was Participant Information Correctly Entered Into The DEXA Interface (ID, Sex, First & Last, Initial, D.O.B., Weight & Height)?","1, Yes | 2, No",,,,,,,y,,,,,
+dexa_participant_position,dualenergy_xray_absorptiometry_dexa,,yesno,"6. Was Participant Lying Supine On The DEXA Scanner Bed With Their Body Straight And Aligned With The Center Of The Scanner With Legs Straight, Feet Slightly Apart With Shoes Off And Arms To The Side Of The Body With Palms Facing The Body With Thumbs Oriented Upwards?",,,,,,,,y,,,,,
+dexa_legs_tissue_fat,dualenergy_xray_absorptiometry_dexa,LEGS,text,"7a. Legs Tissue (% Fat)",,,number,,,,,y,,,,,
+dexa_legs_region_fat,dualenergy_xray_absorptiometry_dexa,,text,"7b. Legs Region (% Fat)",,,number,,,,"[dexa_legs_tissue_fat] > 1",y,,,,,
+dexa_legs_tissue_grams,dualenergy_xray_absorptiometry_dexa,,text,"7c. Legs Tissue (g)",,,number,,,,"[dexa_legs_region_fat] > 1",y,,,,,
+dexa_legs_fat_grams,dualenergy_xray_absorptiometry_dexa,,text,"7d. Legs Fat (g)",,,number,,,,"[dexa_legs_tissue_grams] > 1",y,,,,,
+dexa_legs_lean_grams,dualenergy_xray_absorptiometry_dexa,,text,"7e. Legs Lean (g)",,,number,,,,"[dexa_legs_fat_grams] > 1",y,,,,,
+dexa_legs_bmc_grams,dualenergy_xray_absorptiometry_dexa,,text,"7f. Legs BMC (g)",,,number,,,,"[dexa_legs_lean_grams] > 1",y,,,,,
+dexa_legs_total_mass_kgs,dualenergy_xray_absorptiometry_dexa,,text,"7g. Legs Total Mass (kg)",,,,,,,"[dexa_legs_bmc_grams] > 1",y,,,,,
+dexa_right_leg_tissue_fat,dualenergy_xray_absorptiometry_dexa,"RIGHT LEG",text,"8a. Right Leg Tissue (% Fat)",,,number,,,,"[dexa_legs_total_mass_kgs] > 1",y,,,,,
+dexa_right_leg_region_fat,dualenergy_xray_absorptiometry_dexa,,text,"8b. Right Leg Region (% Fat)",,,number,,,,"[dexa_right_leg_tissue_fat] > 1",y,,,,,
+dexa_right_leg_tissue_grams,dualenergy_xray_absorptiometry_dexa,,text,"8c. Right Leg Tissue (g)",,,number,,,,"[dexa_right_leg_region_fat] > 1",y,,,,,
+dexa_right_leg_fat_grams,dualenergy_xray_absorptiometry_dexa,,text,"8d. Right Leg Fat (g)",,,number,,,,"[dexa_right_leg_tissue_grams] > 1",y,,,,,
+dexa_right_leg_lean_grams,dualenergy_xray_absorptiometry_dexa,,text,"8e. Right Leg Lean (g)",,,number,,,,"[dexa_right_leg_fat_grams] > 1",y,,,,,
+dexa_right_leg_bmc_grams,dualenergy_xray_absorptiometry_dexa,,text,"8f. Right Leg BMC (g)",,,number,,,,"[dexa_right_leg_lean_grams] > 1",y,,,,,
+dexa_right_leg_total_mass_kg,dualenergy_xray_absorptiometry_dexa,,text,"8g. Right Leg Total Mass (kg)",,,,,,,"[dexa_right_leg_bmc_grams] > 1",y,,,,,
+dexa_left_leg_tissue_fat,dualenergy_xray_absorptiometry_dexa,"LEFT LEG",text,"9a. Left Leg Tissue (% Fat)",,,number,,,,"[dexa_right_leg_total_mass_kg] > 1",y,,,,,
+dexa_left_leg_region_fat,dualenergy_xray_absorptiometry_dexa,,text,"9b. Left Leg Region (% Fat)",,,number,,,,"[dexa_left_leg_tissue_fat] > 1",y,,,,,
+dexa_left_leg_tissue_grams,dualenergy_xray_absorptiometry_dexa,,text,"9c. Left Leg Tissue (g)",,,number,,,,"[dexa_left_leg_region_fat] > 1",y,,,,,
+dexa_left_leg_fat_grams,dualenergy_xray_absorptiometry_dexa,,text,"9d. Left Leg Fat (g)",,,number,,,,"[dexa_left_leg_tissue_grams] > 1",y,,,,,
+dexa_left_leg_lean_grams,dualenergy_xray_absorptiometry_dexa,,text,"9e. Left Leg Lean (g)",,,number,,,,"[dexa_left_leg_fat_grams] > 1",y,,,,,
+dexa_left_leg_bmc_grams,dualenergy_xray_absorptiometry_dexa,,text,"9f. Left Leg BMC (g)",,,number,,,,"[dexa_left_leg_lean_grams] > 1",y,,,,,
+dexa_left_leg_total_mass_kg,dualenergy_xray_absorptiometry_dexa,,text,"9g. Left Leg Total Mass (kg)",,,,,,,"[dexa_left_leg_bmc_grams] > 1",y,,,,,
+dexa_total_tissue_fat,dualenergy_xray_absorptiometry_dexa,TOTAL,text,"10a. Total Tissue (% Fat)",,,number,,,,"[dexa_left_leg_total_mass_kg] > 1",y,,,,,
+dexa_total_region_fat,dualenergy_xray_absorptiometry_dexa,,text,"10b. Total Region (% Fat)",,,number,,,,"[dexa_total_tissue_fat] > 1",y,,,,,
+dexa_total_tissue_grams,dualenergy_xray_absorptiometry_dexa,,text,"10c. Total Tissue (g)",,,number,,,,"[dexa_total_region_fat] > 1",y,,,,,
+dexa_total_fat_grams,dualenergy_xray_absorptiometry_dexa,,text,"10d. Total Fat (g)",,,number,,,,"[dexa_total_tissue_grams] > 1",y,,,,,
+dexa_total_lean_grams,dualenergy_xray_absorptiometry_dexa,,text,"10e. Total Lean (g)",,,number,,,,"[dexa_total_fat_grams] > 1",y,,,,,
+dexa_total_bmc_grams,dualenergy_xray_absorptiometry_dexa,,text,"10f. Total BMC (g)",,,number,,,,"[dexa_total_lean_grams] > 1",y,,,,,
+dexa_total_mass_kg,dualenergy_xray_absorptiometry_dexa,,text,"10g. Total Mass (kg)",,,,,,,"[dexa_total_bmc_grams] > 1",y,,,,,
+dexa_evat_volume,dualenergy_xray_absorptiometry_dexa,"ESTIMATED VISCERAL ADIPOSE TISSUE",text,"11a. Volume (cm3)",,,number,,,,,y,,,,,
+dexa_evat_mass,dualenergy_xray_absorptiometry_dexa,,text,"11b. Mass (g)",,,number,,,,"[dexa_evat_volume] > 1",y,,,,,
+dexa_evat_area,dualenergy_xray_absorptiometry_dexa,,text,"11c. Area (cm2)",,,number,,,,"[dexa_evat_mass] > 1",y,,,,,
+dexa_interpretation,dualenergy_xray_absorptiometry_dexa,,radio,"12. Participant DEXA Scan Interpretation ","1, Normal (-1.0 to 1.0) | 2, Osteopenia (-2.5 to -1.0) | 3, Osteoporosis ( < -2.5)",,,,,,,,,,,,
+dexa_disinfected_after,dualenergy_xray_absorptiometry_dexa,,radio,"13. Was DEXA Scanner And Bed Sanitized and Disinfected After Use?","1, Yes | 2, No",,,,,,,y,,,,,
+dexa_comments,dualenergy_xray_absorptiometry_dexa,,notes,Comments:,,,,,,,,,,,,,
+bp_instructions,blood_pressure,,descriptive,"<div class=""rich-text-field-label""><h6><span style=""text-decoration: underline;"">Tell The Participant:</span><br />-Now we're going to check your blood pressure, we'll get your sytolic and diastolic measuremnts as well as your heart rate.</h6></div>",,,,,,,,,,,,,
+bp_date,blood_pressure,,text,"Date Blood Pressure Measurment Performed",,,date_dmy,,,,,y,,,,,
+bp_time,blood_pressure,,text,"Time Blood Pressure Measurment Performed",,,time,,,,,y,,,,,
+bp_positioning,blood_pressure,,yesno,"1. Was Position Of Participant In An Upright Seated Position For Blood Pressure Reading?",,,,,,,,y,,,,,
+bp_resting_time,blood_pressure,,yesno,"2. Was Participant At Rest For At Least 5 Minutes Before Blood Pressure Taken?",,,,,,,,y,,,,,
+bp_taken,blood_pressure,,yesno,"3. Was Blood Pressure Measurment Taken?",,,,,,,,y,,,,,
+bp_systolic,blood_pressure,,text,"4. Systolic Measurment  (mmHg)",,,,,,,,y,,,,,
+bp_diastolic,blood_pressure,,text,"5. Diastolic Measurment (mmHg) ",,,,,,,,y,,,,,
+bp_pulse,blood_pressure,,text,"6. Pulse (Heart Rate) Measurment",,,,,,,,y,,,,,
+bp_comments,blood_pressure,,notes,Comments:,,,,,,,,,,,,,
+biopsy_date,muscle_sampling_biopsy,"ALL Biopsies Done During T1, T2 & T3 Will Be Performed On The Same Leg.",text,"Date Muscle Biopsy Performed",,,date_dmy,,,,,y,,,,,
+biopsy_time,muscle_sampling_biopsy,,text,"Time Muscle Biopsy Performed",,,time,,,,,y,,,,,
+biopsy_leg,muscle_sampling_biopsy,,radio,"1. Which Leg Did Participant Have Muscle Biopsy Performed On?","1, Left | 2, Right","Note the leg biopsy perfomed on for future reference (ALL biopsies will be performed on the same leg).",,,,,,y,,,,,
+biopsy_post_care,muscle_sampling_biopsy,,yesno,"2. Was Participant Given A Post Procedural Care Kit With Post Care Instructions Included?",,,,,,,,y,,,,,
+biopsy_post_care_reason,muscle_sampling_biopsy,,yesno,"2a. If No To Question 2, Please Explain",,,,,,,"[biopsy_post_care] = '0'",y,,,,,
+biopsy_comments,muscle_sampling_biopsy,,notes,,,,,,,,,,,,,,
+ogtt_date,oral_glucose_tolerance_test_ogtt,,text,"Date Oral Glucose Tolerance Test Performed",,,date_dmy,,,,,y,,,,,
+ogtt_time,oral_glucose_tolerance_test_ogtt,,text,"Time Oral Glucose Tolerance Test Performed",,,time,,,,,y,,,,,
+ogtt_pre_draw,oral_glucose_tolerance_test_ogtt,,yesno,"1. Did Participant Have Blood Drawn Before Consuming Glucose Beverage?",,,,,,,,,,,,,
+ogtt_q1_notes,oral_glucose_tolerance_test_ogtt,,notes,"1a. If No To Question 1, Please Explain",,,,,,,"[ogtt_pre_draw] = '0'",y,,,,,
+ogtt_beverage_consumed,oral_glucose_tolerance_test_ogtt,,yesno,"2. Did Participant Consume The 75 g Glucose (TRUTOL, ThermoFisher Scientific) Beverage?",,,,,,,"[ogtt_pre_draw] = '1'",y,,,,,
+ogtt_no_why,oral_glucose_tolerance_test_ogtt,,notes,"2a. If No To Question 2, Please Explain",,,,,,,"[ogtt_beverage_consumed] = '0'",y,,,,,
+ogtt_thirty_min_draw,oral_glucose_tolerance_test_ogtt,,yesno,"3. Was Blood Drawn (30 Minutes) After Consumption?",,,,,,,"[ogtt_beverage_consumed] = '1'",y,,,,,
+ogtt_q3_notes,oral_glucose_tolerance_test_ogtt,,notes,"3a. If No To Question 4, Please Explain",,,,,,,"[ogtt_thirty_min_draw] = '0'",y,,,,,
+ogtt_sixty_min_draw,oral_glucose_tolerance_test_ogtt,,yesno,"4. Was Blood Drawn (60 Minutes) After Consumption?",,,,,,,"[ogtt_thirty_min_draw] = '1'",y,,,,,
+ogtt_q4_notes,oral_glucose_tolerance_test_ogtt,,notes,"4a. If No To Question 5, Please Explain",,,,,,,"[ogtt_sixty_min_draw] = '0'",y,,,,,
+ogtt_final_blood_draw,oral_glucose_tolerance_test_ogtt,,yesno,"5.  Was Blood Drawn (120 Minutes) After Consumption?",,,,,,,"[ogtt_sixty_min_draw] = '1'",y,,,,,
+ogtt_q5_notes,oral_glucose_tolerance_test_ogtt,,notes,"5a. If No To Question 5, Please Explain",,,,,,,"[ogtt_final_blood_draw] = '0'",y,,,,,
+ogtt_blood_spillage,oral_glucose_tolerance_test_ogtt,,yesno,"6. Were Surfaces Contaminated With Blood Spillage Cleaned And Disinfected?",,,,,,,,,,,,,
+ogtt_q6_notes,oral_glucose_tolerance_test_ogtt,,yesno,"6a. If No To Question 6 Please Explain",,,,,,,"[ogtt_blood_spillage] = '0'",y,,,,,
+ogtt_comments,oral_glucose_tolerance_test_ogtt,,notes,Comments:,,,,,,,,,,,,,
+sf_instructions,fatigue_sf36_energyfatigue_subscale,,descriptive,"<div class=""rich-text-field-label""><h6><span style=""text-decoration: underline;"">Tell The Participant:</span></h6> <h6>-Here you will complete the energy and fatigue subscale questionnaire. This questionnaire asks 36 questions to assess your perceived energy levels and fatigue.</h6> <h6>-Carefully read and answer each question according to your own personal experiences and I want to assure you that their are no right or wrong answers.</h6> <p> </p></div>",,,,,,,,,,,,,
+sf_date_completed,fatigue_sf36_energyfatigue_subscale,,text,"Date 36-Item Short Form Survey Completed",,,date_dmy,,,,,y,,,,,
+sf_time_completed,fatigue_sf36_energyfatigue_subscale,,text,"Time 36-Item Short Form Survey Completed",,,time,,,,,y,,,,,
+sf_individual_health,fatigue_sf36_energyfatigue_subscale,"36-Item Short Form Survey Questionnaire",radio,"1. In General, Would You Say Your Health Is:","100, Excellent | 75, Very Good | 50, Good | 25, Fair | 0, Poor",,,,,,,y,,,,,
+sf_general_health,fatigue_sf36_energyfatigue_subscale,,radio,"2. Compared To One Year Ago, How Would You Rate Your Health In General Now?","100, Much Better Now Than One Year Ago | 75, Somewhat Better Now Than One Year Ago | 50, About The Same | 25, Somewhat Worse Now Than One Year Ago | 0, Much Worse Now Than One Year Ago",,,,,,,y,,,,,
+sf_vigorous_activities,fatigue_sf36_energyfatigue_subscale,"The Following Items Are About Activities You Might Do During A Typical Day. Does Your Health Now Limit You In These Activities? If So, How Much?",radio,"3. Vigorous Activities, Such As Running, Lifting Heavy Objects, Participating In Strenuous Sports","0, Yes, Limited A Lot | 50, Yes, Limited A Little | 100, No, Not Limited At All",,,,,,,y,,,,,
+sf_moderate_activities,fatigue_sf36_energyfatigue_subscale,,radio,"4. Moderate Activities, Such As Moving A Table, Pushing A Vacuum Cleaner, Bowling, Or Playing Golf","0, Yes, Limited A Lot | 50, Yes, Limited A Little | 100, No, Not Limited At All",,,,,,,y,,,,,
+sf_groceries,fatigue_sf36_energyfatigue_subscale,,radio,"5. Lifting Or Carrying Groceries","0, Yes, Limited A Lot | 50, Yes, Limited A Little | 100, No, Not Limited At All",,,,,,,y,,,,,
+sf_stairs,fatigue_sf36_energyfatigue_subscale,,radio,"6. Climbing Several Flights Or Stairs","0, Yes, Limited A Lot | 50, Yes, Limited A Little | 100, No, Not Limited At All",,,,,,,y,,,,,
+sf_one_stairs,fatigue_sf36_energyfatigue_subscale,,radio,"7. Climbing One Flight Of Stairs","0, Yes, Limited A Lot | 50, Yes, Limited A Little | 100, No, Not Limited At All",,,,,,,y,,,,,
+sf_bending,fatigue_sf36_energyfatigue_subscale,,radio,"8. Bending, Kneeling, Or Stooping","0, Yes, Limited A Lot | 50, Yes, Limited A Little | 100, No, Not Limited At All",,,,,,,y,,,,,
+sf_mile,fatigue_sf36_energyfatigue_subscale,,radio,"9. Walking More Than A Mile","0, Yes, Limited A Lot | 50, Yes, Limited A Little | 100, No, Not Limited At All",,,,,,,y,,,,,
+sf_blocks,fatigue_sf36_energyfatigue_subscale,,radio,"10. Walking Several Blocks","0, Yes, Limited A Lot | 50, Yes, Limited A Little | 100, No, Not Limited At All",,,,,,,y,,,,,
+sf_one_block,fatigue_sf36_energyfatigue_subscale,,radio,"11. Walking One Block","0, Yes, Limited A Lot | 50, Yes, Limited A Little | 100, No, Not Limited At All",,,,,,,y,,,,,
+sf_bathing,fatigue_sf36_energyfatigue_subscale,,radio,"12. Bathing Or Dressing Yourself","0, Yes, Limited A Lot | 50, Yes, Limited A Little | 100, No, Not Limited At All",,,,,,,y,,,,,
+sf_physical_cut,fatigue_sf36_energyfatigue_subscale,"During The Past 4 Weeks, Have You Had Any Of The Following Problems With Your Work Or Other Regular Daily Activities As A Result Of Your Physical Health?",radio,"13. Cut Down The Amount Of Time You Spent On Work Or Other Activities","0, Yes | 100, No",,,,,,,y,,,,,
+sf_less_accomplished,fatigue_sf36_energyfatigue_subscale,,radio,"14. Accomplished Less Than You Would Like","0, Yes | 100, No",,,,,,,y,,,,,
+sf_limited_activities,fatigue_sf36_energyfatigue_subscale,,radio,"15. Were Limited In The Kind Of Work Or Other Activities","0, Yes | 100, No",,,,,,,y,,,,,
+sf_performance_difficulty,fatigue_sf36_energyfatigue_subscale,,radio,"16. Had Difficulty Performing The Work Or Other Activities (For Example, It Took Extra Effort)","0, Yes | 100, No",,,,,,,y,,,,,
+sf_activity_cut_time,fatigue_sf36_energyfatigue_subscale,"During The Past 4 Weeks, Have You Had Any Of The Following Problems With Your Work Or Other Regular Daily Activities As A Result Of Any Emotional Problems (Such As Feeling Depressed Or Anxious)?",radio,"17. Cut Down The Amount Of Time You Spent On Work Or Other Activities","0, Yes | 100, No",,,,,,,y,,,,,
+sf_accomplish_less,fatigue_sf36_energyfatigue_subscale,,radio,"18. Accomplished Less Than You Would Like","0, Yes | 100, No",,,,,,,y,,,,,
+sf_didnt_do_work,fatigue_sf36_energyfatigue_subscale,,radio,"19. Didn't Do Work Or Other Activities As Carefully As Usual","0, Yes | 100, No",,,,,,,y,,,,,
+sf_social_activity,fatigue_sf36_energyfatigue_subscale,,radio,"20. During The Past 4 Weeks, To What Extent Has Your Physical Health Or Emotional Problems Interfered With Your Normal Social Activities With Family, Friends, Neighbors, Or Groups?","100, Not At All | 75, Slightly | 50, Moderately | 25, Quite A Bit | 0, Extremely",,,,,,,y,,,,,
+sf_bodily_pain,fatigue_sf36_energyfatigue_subscale,,radio,"21. How Much Bodily Pain Have You Had During The Past 4 Weeks?","100, None | 80, Very Mild | 60, Mild | 40, Moderate | 20, Severe | 0, Very Severe",,,,,,,y,,,,,
+sf_normal_work,fatigue_sf36_energyfatigue_subscale,,radio,"22. During The Past 4 Weeks, How Much Did Pain Interfere With Your Normal Work (Including Both Work Outside The Home And Housework)?","100, Not At All | 75, A Little Bit | 50, Moderately | 25, Quite A Bit | 0, Extremely",,,,,,,y,,,,,
+sf_pep,fatigue_sf36_energyfatigue_subscale,"These Questions Are About How You Feel And How Things Have Been With You During The Past 4 Weeks. For Each Question, Please Give The One Answer That Comes Closest To The Way You Have Been Feeling.
+
+How Much Of The Time During The Past 4 Weeks...",radio,"23. Did You Feel Full Of Pep?","100, All Of The Time | 80, Most Of The Time | 60, A Good Bit Of The Time | 40, Some Of The Time | 20, A Little Of The Time | 0, None Of The Time",,,,,,,y,,,,,
+sf_nervousness,fatigue_sf36_energyfatigue_subscale,,radio,"24. Have You Been A Very Nervous Person?","0, All Of The Time | 20, Most Of The Time | 40, A Good Bit Of The Time | 60, Some Of The Time | 80, A Little Of The Time | 100, None Of The Time",,,,,,,y,,,,,
+sf_feeling_down,fatigue_sf36_energyfatigue_subscale,,radio,"25. Have You Felt So Down In The Dumps That Nothing Could Cheer You Up?","0, All Of The Time | 20, Most Of The Time | 40, A Good Bit Of The Time | 60, Some Of The Time | 80, A Little Of The Time | 100, None Of The Time",,,,,,,y,,,,,
+sf_calm_and_peace,fatigue_sf36_energyfatigue_subscale,,radio,"26. Have You Felt Calm And Peaceful?","100, All Of The Time | 80, Most Of The Time | 60, A Good Bit Of The Time | 40, Some Of The Time | 20, A Little Of The Time | 0, None Of The Time",,,,,,,y,,,,,
+sf_energy_level,fatigue_sf36_energyfatigue_subscale,,radio,"27. Did You Have A Lot Of Energy?","100, All Of The Time | 80, Most Of The Time | 60, A Good Bit Of The Time | 40, Some Of The Time | 20, A Little Of The Time | 0, None Of The Time",,,,,,,y,,,,,
+sf_feeling_blue,fatigue_sf36_energyfatigue_subscale,,radio,"28. Have You Felt So Downhearted And Blue?","0, All Of The Time | 20, Most Of The Time | 40, A Good Bit Of The Time | 60, Some Of The Time | 80, A Little Of The Time | 100, None Of The Time",,,,,,,y,,,,,
+sf_worn_out,fatigue_sf36_energyfatigue_subscale,,radio,"29. Did You Feel Worn Out?","0, All Of The Time | 20, Most Of The Time | 40, A Good Bit Of The Time | 60, Some Of The Time | 80, A Little Of The Time | 100, None Of The Time",,,,,,,y,,,,,
+sf_happy,fatigue_sf36_energyfatigue_subscale,,radio,"30. Have You Been A Happy Person?","100, All Of The Time | 80, Most Of The Time | 60, A Good Bit Of The Time | 40, Some Of The Time | 20, A Little Of The Time | 0, None Of The Time",,,,,,,y,,,,,
+sf_tired,fatigue_sf36_energyfatigue_subscale,,radio,"31. Did You Feel Tired?","0, All Of The Time | 20, Most Of The Time | 40, A Good Bit Of The Time | 60, Some Of The Time | 80, A Little Of The Time | 100, None Of The Time",,,,,,,y,,,,,
+sf_social_activities,fatigue_sf36_energyfatigue_subscale,,radio,"32. During The Past 4 Weeks, How Much Of The Time Has Your Physical Health Or Emotional Problems Interfered With Your Social Activities (Like Visiting With Friends, Relatives, etc.)","0, All Of The Time | 25, Most Of The Time | 50, Some Of The Time | 75, A Little Of The Time | 100, None Of The Time",,,,,,,y,,,,,
+sf_easily_sick,fatigue_sf36_energyfatigue_subscale,"How TRUE or FALSE Is Each Of The Following Statements For You.",radio,"33. I Seem To Get Sick A Little Easier Than Other People","0, Definitely True | 25, Mostly True | 50, Don't Know | 75, Mostly False | 100, Definitely False",,,,,,,y,,,,,
+sf_super_healthy,fatigue_sf36_energyfatigue_subscale,,radio,"34. I Am As Healthy As Anybody I Know","100, Definitely True | 75, Mostly True | 50, Don't Know | 25, Mostly False | 0, Definitely False",,,,,,,y,,,,,
+sf_health_to_be_worse,fatigue_sf36_energyfatigue_subscale,,radio,"35. I Expect My Health To Get Worse","0, Definitely True | 25, Mostly True | 50, Don't Know | 75, Mostly False | 100, Definitely False",,,,,,,y,,,,,
+sf_excellent_health,fatigue_sf36_energyfatigue_subscale,,radio,"36. My Health Is Excellent","100, Definitely True | 75, Mostly True | 50, Don't Know | 25, Mostly False | 0, Definitely False",,,,,,,y,,,,,
+sf_physical_function_score,fatigue_sf36_energyfatigue_subscale,"SF-36 ENERGY/FATIGUE SUBSCALE HEALTH SURVEY SCORE",calc,"37. Physical Functioning Score","([sf_vigorous_activities] + [sf_moderate_activities] + [sf_groceries] + [sf_stairs] + [sf_one_stairs] + [sf_bending] + [sf_mile] + [sf_blocks] + [sf_one_block] + [sf_bathing])/10",,,,,,,y,,,,,
+sf_phys_health_limit_score,fatigue_sf36_energyfatigue_subscale,,calc,"38. Role Limitations Due To Physical Health Score","([sf_physical_cut] + [sf_less_accomplished] + [sf_limited_activities] + [sf_performance_difficulty])/4",,,,,,,y,,,,,
+sf_emotional_problem_score,fatigue_sf36_energyfatigue_subscale,,calc,"39. Role Limitations Due To Emotional Problems Score","([sf_activity_cut_time] + [sf_accomplish_less] + [sf_didnt_do_work])/3",,,,,,,y,,,,,
+sf_energy_fatigue_score,fatigue_sf36_energyfatigue_subscale,,calc,"40. Energy/Fatigue Score","([sf_pep] + [sf_energy_level] + [sf_worn_out] + [sf_tired])/4",,,,,,,y,,,,,
+sf_well_being_score,fatigue_sf36_energyfatigue_subscale,,calc,"41. Emotional Well-Being Score","([sf_nervousness] + [sf_feeling_down] + [sf_calm_and_peace] + [sf_feeling_blue] + [sf_happy])/5",,,,,,,y,,,,,
+sf_social_function_score,fatigue_sf36_energyfatigue_subscale,,calc,"42. Social Functioning Score","([sf_social_activity] + [sf_social_activities])/2",,,,,,,y,,,,,
+sf_pain_score,fatigue_sf36_energyfatigue_subscale,,calc,"43. Pain Score","([sf_bodily_pain] + [sf_normal_work])/2",,,,,,,y,,,,,
+sf_general_health_score,fatigue_sf36_energyfatigue_subscale,,calc,"44. General Health Score","([sf_individual_health] + [sf_easily_sick] + [sf_super_healthy] + [sf_health_to_be_worse] + [sf_excellent_health])/5",,,,,,,y,,,,,
+sf_comments,fatigue_sf36_energyfatigue_subscale,,notes,Comments:,,,,,,,,,,,,,
+ipaq_instructions,physical_activity_international_physical_activity,,descriptive,"<div class=""rich-text-field-label""><h6><span style=""text-decoration: underline;"">Tell The Participant:</span><br />-Here I am going to have you complete the International Physical Activity Questionnaire which measures the times you've spent walking and doing moderate to vigorous physical activities over the past 7 days.</h6> <h6>-Carefully read and answer each question according to your own personal experiences and I want to assure you that their are no right or weong answers.</h6></div>",,,,,,,,,,,,,
+ipaq_date_completed,physical_activity_international_physical_activity,,text,"Date Physical Activity International Physical Activity Questionnaire (IPAQ) Completed?",,,date_dmy,,,,,y,,,,,
+ipaq_time_completed,physical_activity_international_physical_activity,,text,"Time Physical Activity International Physical Activity Questionnaire (IPAQ) Completed?",,,time,,,,,y,,,,,
+ipaq_vigorous,physical_activity_international_physical_activity,"The following questions will ask you about the time you spent being
+physically active in the last 7 days. Please answer each question even if you do not
+consider yourself to be an active person. Please think about the activities you do at
+work, as part of your house and yard work, to get from place to place, and in your spare
+time for recreation, exercise or sport.
+
+Think about all the vigorous activities that you did in the last 7 days. Vigorous
+physical activities refer to activities that take hard physical effort and make you breathe
+much harder than normal. Think only about those physical activities that you did for at
+least 10 minutes at a time",radio,"1. During The Last 7 Days, On How Many Days Did You Do Vigorous Physical 
+Activities Like Heavy Lifting, Digging, Aerobics, Or Fast Bicycling? ","1, 0 (No Vigorous Activity) | 2, 1 | 3, 2 | 4, 3 | 5, 4 | 6, 5 | 7, 6 | 8, 7",,,,,,,y,,,,,
+ipaq_daily_vigorous,physical_activity_international_physical_activity,,text,"1a. How Much Time Did You Usually Spend Doing Vigorous Physical Activities On One Of Those Days? (In Hours And Minutes Per Day)",,,number,,,,"[ipaq_vigorous] = '2' or [ipaq_vigorous] = '3' or [ipaq_vigorous] = '4' or [ipaq_vigorous] = '5' or [ipaq_vigorous] = '6' or [ipaq_vigorous] = '7' or [ipaq_vigorous] = '8'",,,,,,
+ipaq_moderate,physical_activity_international_physical_activity,"Think about all the moderate activities that you did in the last 7 days. Moderate
+activities refer to activities that take moderate physical effort and make you breathe 
+somewhat harder than normal. Think only about those physical activities that you did 
+for at least 10 minutes at a time.",radio,"2. During The Last 7 Days, On How Many Days Did You Do Moderate Physical Activities Like Carrying Light Loads, Bicycling At A Regular Pace, Or Doubles Tennis?  (Not Including Walking)","1, 0 (No Moderate Activity) | 2, 1 | 3, 2 | 4, 3 | 5, 4 | 6, 5 | 7, 6 | 8, 7",,,,,,,y,,,,,
+ipaq_daily_moderate,physical_activity_international_physical_activity,,text,"2a. How Much Time Did You Usually Spend Doing Moderate Physical Activities On One Of Those Days? (In Hours And Minutes Per Day)",,,number,,,,"[ipaq_moderate] = '2' or [ipaq_moderate] = '3' or [ipaq_moderate] = '4' or [ipaq_moderate] = '5' or [ipaq_moderate] = '6' or [ipaq_moderate] = '7' or [ipaq_moderate] = '8'",y,,,,,
+ipaq_walked,physical_activity_international_physical_activity,"Think about the time you spent walking in the last 7 days. This includes at work and at 
+home, walking to travel from place to place, and any other walking that you have done
+solely for recreation, sport, exercise, or leisure.",radio,"3. During The Last 7 Days, On How Many Days Did You Walk For At Least 10 Minutes 
+At A Time? (In Days Per Week)
+","1, 0 | 2, 1 | 3, 2 | 4, 3 | 5, 4 | 6, 5 | 7, 6 | 8, 7",,,,,,,y,,,,,
+ipaq_daily_walked,physical_activity_international_physical_activity,,text,"3a. How Much Time Did You Usually Spend Walking On One Of Those Days? (In Hours And Minutes Per Day)",,,number,,,,"[ipaq_walked] = '2' or [ipaq_walked] = '3' or [ipaq_walked] = '4' or [ipaq_walked] = '5' or [ipaq_walked] = '6' or [ipaq_walked] = '7' or [ipaq_walked] = '8'",y,,,,,
+ipaq_sitting,physical_activity_international_physical_activity,"The last question is about the time you spent sitting on weekdays during the last 7 days. Include time spent at work, at home, while doing course work and during leisure time. This may include time spent sitting at a desk, visiting friends, reading, or sitting or lying down to watch television.",text,"4. During The Last 7 Days, How Much Time Did You Spend Sitting On Each Weekday?",,,number,,,,,y,,,,,
+ipaq_comments,physical_activity_international_physical_activity,,notes,Comments:,,,,,,,,,,,,,
+hooper_instructions,sleep_quality_and_wellbeing_hooper_index_7point_li,,descriptive,"<div class=""rich-text-field-label""><h6><span style=""text-decoration: underline;"">Tell The Participant:</span></h6> <h6>- Here you will complete the Sleep Quality and Well-Being Assessment also referred to as the Hooper Index Questionnaire. This questionnaire is used to monitor an individuals physical and mental well-being by asking questions pertaining to your fatigue, stress, recovery, sleep quality and overall well-being.</h6></div>",,,,,,,,,,,,,
+hooper_date,sleep_quality_and_wellbeing_hooper_index_7point_li,,text,"Date Sleep Quality And Well-Being (Hooper Index 7-Point Likert Scale) Performed",,,date_dmy,,,,,y,,,,,
+hooper_time,sleep_quality_and_wellbeing_hooper_index_7point_li,,text,"Time Sleep Quality And Well-Being (Hooper Index 7-Point Likert Scale) Performed",,,time,,,,,y,,,,,
+hooper_fatigue,sleep_quality_and_wellbeing_hooper_index_7point_li,,radio,"1. How Fatigued Are You?","1, 1=No Fatigue | 2, 2=Minimal Fatigue | 3, 3=Better Than Normal | 4, 4=Normal | 5, 5=Worse Than Normal | 6, 6=Very Fatigued | 7, 7=Exhausted - Major Fatigue",,,,,,,y,,,,,
+hooper_sleep_quality,sleep_quality_and_wellbeing_hooper_index_7point_li,,radio,"2. How Was Your Sleep Last Night?","1, 1=Outstanding | 2, 2=Very Good | 3, 3=Better Than Normal | 4, 4=Normal | 5, 5=Worse Than Normal | 6, 6=Disrupted | 7, 7=Horrible - No Sleep",,,,,,,y,,,,,
+hooper_sleep_duration,sleep_quality_and_wellbeing_hooper_index_7point_li,,radio,"3. How Many Hours Did You Sleep Last Night?","1, 10+ | 2, 9-10 | 3, 8-9 | 4, 8 | 5, 7-8 | 6, 5-7 | 7, 5 or Less",,,,,,,y,,,,,
+hooper_soreness,sleep_quality_and_wellbeing_hooper_index_7point_li,,radio,"4. Please Rate Your Level Of Muscle Soreness","1, 1=No Soreness | 2, 2=Very Little Soreness | 3, 3=Better Than Normal | 4, 4=Normal | 5, 5=Worse Than Normal | 6, 6=Very Sore/Tight | 7, 7=Extremely Sore/Tight",,,,,,,y,,,,,
+hooper_mental,sleep_quality_and_wellbeing_hooper_index_7point_li,,radio,"5. How Are You Feeling Psychologically (Mentally)? ","1, 1=Feeling Great - Very Relaxed | 2, 2=Feeling Good - Relaxed | 3, 3=Better Than Normal | 4, 4=Normal | 5, 5=Worse Than Normal | 6, 6=Stressed | 7, 7=Very Stressed",,,,,,,y,,,,,
+hooper_score,sleep_quality_and_wellbeing_hooper_index_7point_li,,calc,"6. Hooper Index Score","[hooper_fatigue]+[hooper_sleep_quality] + [hooper_sleep_duration]+[hooper_soreness]+ [hooper_mental]",,,,,,,y,,,,,"The scores for all questions are summed to calculate a total Hooper Index. A lower Hooper Index score indicates better overall well-being and readiness. Higher scores suggest the individual may be experiencing higher levels of fatigue, stress, and/or muscle soreness, potentially impacting their performance and recovery. "
+hooper_comments,sleep_quality_and_wellbeing_hooper_index_7point_li,,notes,Comments:,,,,,,,,,,,,,
+asa24_diet_instructions,h_diet_recall_asa24_healthy_eating_index_1100_scal,,descriptive,"<div class=""rich-text-field-label""><h6><span style=""text-decoration: underline;"">Tell The Participant</span></h6> <h6>-Here we will complete the 24hr diet recall. During this assessment you will provide information on your food and beverage intake over the last 24hrs so that we can assess your dietary patterns. You will be asked specific questions about what you ate and drank during breakfast, lunch and dinner even any supplements you might have taken.</h6> <h6>-You will also be asked how the meals were prepared, the ingredients in the food, the time the meal was consumed, where the meal was consumed etc. Try to be as specific and as detailed as posible and I want you to remember that there are no right or wrong answers here.</h6></div>",,,,,,,,,,,,,
+asa24_diet_date,h_diet_recall_asa24_healthy_eating_index_1100_scal,,text,"Date 24h Diet Recall (ASA24: Healthy Eating Index 1-100 Scale) Completed",,,date_dmy,,,,,y,,,,,
+asa24_diet_time,h_diet_recall_asa24_healthy_eating_index_1100_scal,,text,"Time 24h Diet Recall (ASA24: Healthy Eating Index 1-100 Scale) Completed?",,,time,,,,,y,,,,,
+asa24_profile,h_diet_recall_asa24_healthy_eating_index_1100_scal,,yesno,"1. Was Participants 24h Diet Recall (ASA24: Healthy Eating Index 1-100 Scale) Nutrtion Profile Printed?",,,,,,,,y,,,,,
+asa24_upload,h_diet_recall_asa24_healthy_eating_index_1100_scal,,file,,,,,,,,,,,,,,
+asa24_comments,h_diet_recall_asa24_healthy_eating_index_1100_scal,,notes,,,,,,,,,,,,,,
+tlfb_alc_instructions,alcohol_timeline_follow_back_interview_tlfb,,descriptive,"<div class=""rich-text-field-label""><p>Introduction</p> <p><em>Tell the participant:</em></p> <ul> <li><span style=""font-weight: normal;"">What want to do today is get an idea of what your drinking was like recently, and </span><span style=""font-weight: normal;"">to do this, we use a calendar like this one (show sample calendar).</span></li> <li><span style=""font-weight: normal;"">Now, what I would like to do is to ask you about your drinking over the past </span><span style=""font-weight: normal;"">30 days. During this time period we want to get an idea of how much alcohol </span><span style=""font-weight: normal;"">you consumed on each day, and what type of alcohol it was. We'll assist you by using a calendar and asking questions to help you remember.</span></li> <li><span style=""font-weight: normal;"">We're asking for your <span style=""background-color: #fbeeb8;"">best estimate</span>. We want you to be as accurate as possible, but we recognize that it is not always easy to recall events with 100% accuracy, whether it is drinking or anything else.  </span></li> <li><span style=""font-weight: normal;"">If you are not sure whether you drank 7 or 11 drinks on a given day or whether you drank on a Thursday or a Friday, GIVE IT YOUR BEST GUESS! What is important is that 7 or 11 drinks are very different from 1 or 2 drinks or from 25 drinks. The goal is to get a sense of how frequently you drank, how much you drank, and your patterns of drinking.</span></li> <li><span style=""font-weight: normal;"">We'll need to know the<span style=""background-color: #fbeeb8;""> quantity, type, and brand (if you know) of alcohol you consumed. You can also tell us which restaurant you ordered from if applicable</span>. For example, if you had 2 glasses of wine, we'll ask how much wine (5 oz? 9 oz?) and as much detail as you remember about the type of wine. If you also had a beer, we'll need to know what kind (Dos Equis? Lubbock Light from Two Docs?) and how much (12 oz standard can? 6 pack of 12-oz cans? A pint - 16 oz?)</span></li> <li><span style=""font-weight: normal;"">Do you have any questions about this before we begin?</span></li> </ul> <p><em>After answering participant's question, begin filling out the calendar. Use the following questions as a guide:</em></p> <ul> <li><span style=""font-weight: normal;"">Let's start with yesterday </span>(insert date)<span style=""font-weight: normal;""> and go back 30 days-those dates are </span>(insert date) <span style=""font-weight: normal;"">through </span>(insert date)<span style=""font-weight: normal;"">.</span></li> <li><span style=""font-weight: normal;"">Do you have any special holidays or dates you want to mark on the calendar to help you better recall your drinking during this time frame? You can consult your phone or calendar if needed. </span><em>(participant replies and the interviewer enters the days in the calendar as appropriate)</em></li> <li><em>(begin with the first special date or holiday) </em><span style=""font-weight: normal;"">What drinks did you have on that day, and how much? </span><em>(participant replies, and interviewer writes in, asking follow-up questions as needed) (continue asking the following questions, with follow-ups as needed, and filling in info)</em></li> <li><span style=""font-weight: normal;"">What was the greatest amount of drinks you consumed on any given day during this period, and what date was it?</span></li> <li><span style=""font-weight: normal;"">What was the smallest number of standard drinks you consumed on any given day during this period, and what date was it?</span></li> <li><span style=""font-weight: normal;"">Some people will have patterns to their drinking that can help them recall their use. For example, some people may drink 2 12-oz Budweiser beers every night. Do you have any notable patterns to your drinking?</span></li> <li><span style=""font-weight: normal;"">When did you last drink in this time frame?</span> <span style=""font-weight: normal;"">What drinks did you have on that day, and how much? </span></li> <li><span style=""font-weight: normal;"">During this period, did you have any extended periods of abstinence from alcohol when you did not drink any alcohol at all, not even a drop? </span></li> <li><span style=""font-weight: normal;"">Are there any blocks of time during this period when you have used alcohol in a very patterned manner for a period of time?</span></li> <li><em>Continue working with the participant to fill in EVERY DAY - even if it is ""0"".</em></li> </ul></div>",,,,,,,,,,,,,
+tlfb_date_completed,alcohol_timeline_follow_back_interview_tlfb,,text,"Date TLFB Was Completed",,,date_dmy,,,,,y,,,,,
+tlfb_reference_chart,alcohol_timeline_follow_back_interview_tlfb,,yesno,"2. Was The Participant Shown The Standard Drink Conversion Reference Chart?",,,,,,,,y,,,,,
+tlfb_reference_calendar,alcohol_timeline_follow_back_interview_tlfb,,yesno,"3. Was The Sample Timeline Follow Back Calendar For Reference Shown To Participant?",,,,,,,,y,,,,,
+tlfb_completion,alcohol_timeline_follow_back_interview_tlfb,,yesno,"4. Was Timeline Follow Back Interview Completed With CRC/Interviewer Filling Out The Calendar?",,,,,,,,y,,,,,
+tlfb_start_date,alcohol_timeline_follow_back_interview_tlfb,,text,"TLFB start date (31 days ago; MM-DD-YYYY)",,,date_mdy,,,,,y,,,,,
+tlfb_end_date,alcohol_timeline_follow_back_interview_tlfb,,text,"TLFB end date (yesterday; MM-DD-YYYY)",,,date_mdy,,,,,y,,,,,
+tlfb_day1,alcohol_timeline_follow_back_interview_tlfb,,text,"TLFB day 1 alcohol",,,,,,,,,,,,,
+tlfb_day2,alcohol_timeline_follow_back_interview_tlfb,,text,"TLFB day 2 alcohol",,,,,,,,,,,,,
+tlfb_day3,alcohol_timeline_follow_back_interview_tlfb,,text,"TLFB day 3 alcohol",,,,,,,,,,,,,
+tlfb_day4,alcohol_timeline_follow_back_interview_tlfb,,text,"TLFB day 4 alcohol",,,,,,,,,,,,,
+tlfb_day5,alcohol_timeline_follow_back_interview_tlfb,,text,"TLFB day 5 alcohol",,,,,,,,,,,,,
+tlfb_day6,alcohol_timeline_follow_back_interview_tlfb,,text,"TLFB day 6 alcohol",,,,,,,,,,,,,
+tlfb_day7,alcohol_timeline_follow_back_interview_tlfb,,text,"TLFB day 7 alcohol",,,,,,,,,,,,,
+tlfb_day8,alcohol_timeline_follow_back_interview_tlfb,,text,"TLFB day 8 alcohol",,,,,,,,,,,,,
+tlfb_day9,alcohol_timeline_follow_back_interview_tlfb,,text,"TLFB day 9 alcohol",,,,,,,,,,,,,
+tlfb_day10,alcohol_timeline_follow_back_interview_tlfb,,text,"TLFB day 10 alcohol",,,,,,,,,,,,,
+tlfb_day11,alcohol_timeline_follow_back_interview_tlfb,,text,"TLFB day 11 alcohol",,,,,,,,,,,,,
+tlfb_day12,alcohol_timeline_follow_back_interview_tlfb,,text,"TLFB day 12 alcohol",,,,,,,,,,,,,
+tlfb_day13,alcohol_timeline_follow_back_interview_tlfb,,text,"TLFB day 13 alcohol",,,,,,,,,,,,,
+tlfb_day14,alcohol_timeline_follow_back_interview_tlfb,,text,"TLFB day 14 alcohol",,,,,,,,,,,,,
+tlfb_day15,alcohol_timeline_follow_back_interview_tlfb,,text,"TLFB day 15 alcohol",,,,,,,,,,,,,
+tlfb_day16,alcohol_timeline_follow_back_interview_tlfb,,text,"TLFB day 16 alcohol",,,,,,,,,,,,,
+tlfb_day17,alcohol_timeline_follow_back_interview_tlfb,,text,"TLFB day 17 alcohol",,,,,,,,,,,,,
+tlfb_day18,alcohol_timeline_follow_back_interview_tlfb,,text,"TLFB day 18 alcohol",,,,,,,,,,,,,
+tlfb_day19,alcohol_timeline_follow_back_interview_tlfb,,text,"TLFB day 19 alcohol",,,,,,,,,,,,,
+tlfb_day20,alcohol_timeline_follow_back_interview_tlfb,,text,"TLFB day 20 alcohol",,,,,,,,,,,,,
+tlfb_day21,alcohol_timeline_follow_back_interview_tlfb,,text,"TLFB day 21 alcohol",,,,,,,,,,,,,
+tlfb_day22,alcohol_timeline_follow_back_interview_tlfb,,text,"TLFB day 22 alcohol",,,,,,,,,,,,,
+tlfb_day23,alcohol_timeline_follow_back_interview_tlfb,,text,"TLFB day 23 alcohol",,,,,,,,,,,,,
+tlfb_day24,alcohol_timeline_follow_back_interview_tlfb,,text,"TLFB day 24 alcohol",,,,,,,,,,,,,
+tlfb_day25,alcohol_timeline_follow_back_interview_tlfb,,text,"TLFB day 25 alcohol",,,,,,,,,,,,,
+tlfb_day26,alcohol_timeline_follow_back_interview_tlfb,,text,"TLFB day 26 alcohol",,,,,,,,,,,,,
+tlfb_day27,alcohol_timeline_follow_back_interview_tlfb,,text,"TLFB day 27 alcohol",,,,,,,,,,,,,
+tlfb_day28,alcohol_timeline_follow_back_interview_tlfb,,text,"TLFB day 28 alcohol",,,,,,,,,,,,,
+tlfb_day29,alcohol_timeline_follow_back_interview_tlfb,,text,"TLFB day 29 alcohol",,,,,,,,,,,,,
+tlfb_day30,alcohol_timeline_follow_back_interview_tlfb,,text,"TLFB day 30 alcohol",,,,,,,,,,,,,
+tlfb_completed,alcohol_timeline_follow_back_interview_tlfb,,yesno,"Was Timeline Follow Back Interview Completed With CRC/Interviewer Filling Out The Calendar?",,,,,,,,y,,,,,
+tlfb_calendar_upload,alcohol_timeline_follow_back_interview_tlfb,,file,"TLFB Calendar Upload",,,,,,,,y,,,,,
+tug_instructions,meter_timed_up_and_go_test,,descriptive,"<div class=""rich-text-field-label""><h6><span style=""text-decoration: underline;"">Tell The Participant:</span><br />The 1st Physical Function test we will perform is the 3-meter timed up and go. This test allows us to evaluate your mobility, balance, walking ability and fall risk while walking 3 meters. What you will do is start by sitting in this chair with your feet behind the start line and when I give you the signal to go you will rise up from the chair, and begin walking at your normal pace to the other end, around the cone and back to the chair.<br /><br />I will be timing you to see how long it takes you to complete the test. The timer will begin once your back lifts from the back of the chair and the timer will end when you return to the chair and your back touches the back of the chair. You will perform this test 3 times and you will have a 60 second rest between each interval.<br /><br />I will give you a practice attempt to help you before we actually begin the test. One thing to keep in mind is whichever way you choose to turn around the cone whether clockwise or counter-clockwise, you must turn around the cone the same way each of the 3 times.</h6> <h6><span style=""text-decoration: underline;"">Reminders</span></h6> <h6>*Demonstration*</h6> <h6>*Participant Practice Run*</h6></div>",,,,,,,,,,,,,
+tug_date,meter_timed_up_and_go_test,,text,"Date 3-Meter Timed Up And Go Test Performed",,,date_dmy,,,,,y,,,,,
+tug_time,meter_timed_up_and_go_test,,text,"Time 3-Meter Timed Up And Go Test Performed",,,time,,,,,y,,,,,
+tug_setup,meter_timed_up_and_go_test,,text,"1. Was Timed Up And Go Appropriately Set Up (Floor Spaces Properly Measured and Marked With Tape, Armed Chair Provided and Placed Against Wall etc.)",,,,,,,,y,,,,,
+tug_demonstration,meter_timed_up_and_go_test,,yesno,"2. Was A Demonstration Performed For The Participant?",,,,,,,,y,,,,,
+tug_test_run,meter_timed_up_and_go_test,,yesno,"3. Did Participant Elect To Do A Test Run?",,,,,,,,y,,,,,
+tug_cone_direction,meter_timed_up_and_go_test,,radio,"4. In Which Direction Did Participant Choose To Walk Around Cone?","1, Left | 2, Right",,,,,,,y,,,,,"Participant Will Need To Walk Around Same Direction Of Cone Each Subsequent Time"
+tug_attempt_1,meter_timed_up_and_go_test,,text,"5. Time of 1st TUG Attempt (In Seconds)",,,,,,,,y,,,,,
+tug_rest_1,meter_timed_up_and_go_test,,yesno,"6. Did Participant Rest For 30 Seconds After 1st Rep?",,,,,,,,y,,,,,
+tug_attempt_2,meter_timed_up_and_go_test,,text,"7. Time of 2nd TUG Attempt (In Seconds)",,,,,,,,y,,,,,
+tug_rest_2,meter_timed_up_and_go_test,,yesno,"8. Did Participant Rest For 30 Seconds After 2nd Rep?",,,,,,,,y,,,,,
+tug_attempt_3,meter_timed_up_and_go_test,,text,"9. Time of 3rd TUG Attempt (In Seconds)",,,,,,,,y,,,,,
+tug_rest_3,meter_timed_up_and_go_test,,yesno,"10. Did Participant Rest For 30 Seconds After 3rd Rep?",,,,,,,,y,,,,,
+average_tug_time,meter_timed_up_and_go_test,"<div class=""rich-text-field-label""><p>INTERPRETATION <br /><br /><span style=""text-decoration: underline;""><</span> 10 Seconds = Normal <br /><span style=""text-decoration: underline;""><</span> 20 Seconds = Good Mobility, Can Go Out Alone, Mobile Without A<br />Gait Aid.<br /><span style=""text-decoration: underline;""><</span> 30 seconds = Problems, Cannot Go Outside Alone, Requires A Gait <br />Aid.</p> <p><br />A Score Of More Than Or Equal To Fourteen Seconds Has Been Shown To Indicate High Risk <br />Of Falls.</p></div>",calc,"11. Average Time Of 3-Meter Timed Up And Go (In Seconds)","([tug_attempt_1] + [tug_attempt_2]+[tug_attempt_3])/3",,,,,,,y,,,,,
+sts_instructions,second_sittostand_test,,descriptive,"<div class=""rich-text-field-label""><h6><span style=""text-decoration: underline;"">Tell The Participant:</span><br />The second Physical Function test we will perform is a <span style=""font-weight: normal;"">30 second sit-to-stand. This test measures your leg strength and endurance by evaluating how many times you can stand up from a chair and return to the seated position within 30 seconds.</span></h6> <h6>I'll be watching to see your form, your comfortability and the smoothness and ease in whch you perform this test</h6> <p> </p> <h6><span style=""text-decoration: underline;"">Reminders:</span></h6> <h6><span style=""font-weight: normal;"">*Demonstration*</span></h6> <h6><span style=""font-weight: normal;"">*Participant Practice Run*</span></h6></div>",,,,,,,,,,,,,
+sts_date_perfomed,second_sittostand_test,,text,"Date 30 Second Sit-To-Stand Test Performed",,,date_dmy,,,,,y,,,,,
+sts_time_perfomed,second_sittostand_test,,text,"Time 30 Second Sit-To-Stand Test Performed",,,time,,,,,y,,,,,
+sts_chair_position,second_sittostand_test,,yesno,"1. Was Chair Positioned With The Back Against The Wall?",,,,,,,,y,,,,,
+sts_demonstration,second_sittostand_test,,yesno,"2. Was A Demonstration Performed For The Participant?",,,,,,,,y,,,,,
+sts_test_trial,second_sittostand_test,,yesno,"3. Did Participant Elect To Do A Test Trial?",,,,,,,,y,,,,,
+sts_reps,second_sittostand_test,"<div class=""rich-text-field-label""><p>INTERPRETATION </p> <p>                                    WOMEN</p> <p>Age group (years)                    Below Average; Average; Above Average</p> <p>60 - 64:                                          < 12; 12 - 17; >17<br />65 - 69:                                          < 11; 11 - 16; >16<br />70 - 74:                                          < 10; 10 - 15; >15<br />75 - 79:                                          < 10; 10 - 15; >15<br />80 - 84:                                          < 9; 9 - 14; >14<br />85 - 89:                                          < 8; 8 - 13; >13<br />90 - 94:                                          < 4; 4 - 11; >11</p> <p> </p> <p>                                   MEN</p> <p>Age group (years)                    Below Average; Average; Above Average</p> <p>60 - 64:                                          < 14; 14 - 19; >19<br />65 - 69:                                          < 12; 12 - 18; >18<br />70 - 74:                                          < 12; 12 - 17; >17<br />75 - 79:                                          < 11; 11 - 17; >17<br />80 - 84:                                          < 10; 10 - 15; >15<br />85 - 89:                                          < 8; 8 - 14; >14<br />90 - 94:                                          < 7; 7 - 12; >12</p> <p> </p></div>",text,"4. Number Of Reps Participant Performed In 30 Second Sit-To-Stand Test ",,,,,,,,y,,,,,
+grip_strength_instructions,handgrip_strength_test,,descriptive,"<div class=""rich-text-field-label""><h6><span style=""text-decoration: underline;""><span style=""color: #000000; font-weight: normal; text-decoration: underline;"">Tell The Participant:</span></span><br />The last Physical Function test you will perform is a handgrip strength test to evaluate your muscle strength. You will squeeze a dynamometer with each hand and this will give us an indicator of your overall muscle function and muscle health. So what I will have you do is first remove any rings, bracelets or watches from your hands and wrists.<br /><br /><span style=""text-decoration: underline;"">Participant Instructions:</span> <br />Have the prticipant sit upright in this chair with their elbow flexed at 90 degrees and non-dominant arm resting on the armrest of the chair or held in place against the side of their body. Your wrist should remain in a neutral position (not bent up or down). Ensure the handgrip dynamometer is held with the arm relaxed, not supported by external surfaces, and the participant's hand comfortably fits around the dynamometer handle<br /><br /><span style=""text-decoration: underline;"">Tell The Participant:</span><br />When I hand you the dynamometer, using your dominant hand, hold the dynamometer with your hand relaxed and when I say go, squeeze the device with as much forces as you can but withought straining for 3-5 seconds. <br /><br /><span style=""text-decoration: underline;"">Reminders:</span><br />*Reset device guage after each attempt*<br />*Demonstration*<br />*Participant Practice Run*</h6></div>",,,,,,,,,,,,,
+grip_strength_date,handgrip_strength_test,,text,"Date Handgrip Strength Test Performed",,,date_dmy,,,,,y,,,,,
+grip_strength_time,handgrip_strength_test,,text,"Time Handgrip Strength Test Performed",,,time,,,,,y,,,,,
+grip_strength_rung_right,handgrip_strength_test,,text,"1. Which Rung Was The Dynamometer Set To For The Participants Right Hand?",,,,,,,,y,,,,,
+grip_strength_rung_left,handgrip_strength_test,,text,"2. Which Rung Was The Dynamometer Set To For The Participants Left Hand?",,,,,,,,y,,,,,
+grip_strength_demo,handgrip_strength_test,,yesno,"3. Was A Demonstration Performed For Participant",,,,,,,,y,,,,,
+grip_strength_q3_notes,handgrip_strength_test,,notes,"3a. If No To Question 3, Please Explain",,,,,,,"[grip_strength_demo] = '0'",,,,,,
+grip_strength_test_trial,handgrip_strength_test,,yesno,"4. Did Participant Perform Test Trial",,,,,,,,,,,,,
+grip_strength_q4_notes,handgrip_strength_test,,notes,"4a. If No To Question , Please Explain",,,,,,,"[grip_strength_test_trial] = '0'",,,,,,
+grip_strength_1,handgrip_strength_test,,text,"5. Right Hand Handgrip Strength Result (kgs) [1st Round]",,,,,,,,y,,,,,
+grip_strength_2,handgrip_strength_test,,text,"6. Left Hand Handgrip Strength Result (kgs) [1st Round]",,,,,,,,y,,,,,
+grip_strength_3,handgrip_strength_test,,text,"7. Right Hand Handgrip Strength Result (kgs) [2nd Round]",,,,,,,,y,,,,,
+grip_strength_4,handgrip_strength_test,,text,"8. Left Hand Handgrip Strength Result (kgs) [2nd Round]",,,,,,,,y,,,,,
+grip_strength_5,handgrip_strength_test,,text,"9. Right Hand Handgrip Strength Result (kgs) [3rd Round]",,,,,,,,y,,,,,
+grip_strength_6,handgrip_strength_test,,text,"10. Left Hand Handgrip Strength Result (kgs) [3rd Round]",,,,,,,,y,,,,,
+grip_strength_right_hand_average,handgrip_strength_test,"<div class=""rich-text-field-label""><p>INTERPRETATION</p> <p>                                                      WOMEN<br /><br /><span style=""text-decoration: underline;"">Age Bracket (Years) </span>            <span style=""text-decoration: underline;"">Weak (kg) </span>      <span style=""text-decoration: underline;"">Normal (kg)</span>      <span style=""text-decoration: underline;"">Strong (kg)</span><br />60-64                                        < 17.2                 17.2 - 31.0           > 31.0<br />65-69                                        < 15.4                 15.4 - 27.2           > 27.2<br />70-99                                        < 14.7                 14.7 - 24.5           > 24.5</p> <p> </p> <p>                                                      MEN</p> <p><span style=""text-decoration: underline;"">Age Bracket (Years)</span>             <span style=""text-decoration: underline;"">Weak (kg) </span>      <span style=""text-decoration: underline;"">Normal (kg) </span>     <span style=""text-decoration: underline;"">Strong (kg)</span><br />60-64                                        < 30.2                 30.2 - 48.0           > 48.0<br />65-69                                        < 28.2                 28.2 - 44.0           > 44.0<br />70-99                                        < 21.3                 21.3 - 35.1           > 35.1<br /><br /></p></div>",calc,"11. Right Hand Handgrip Strength Average Result ","([grip_strength_1]+[grip_strength_3]+ [grip_strength_5])/3",,,,,,,y,,,,,
+grip_strength_left_hand_average,handgrip_strength_test,,calc,"12. Left Hand Handgrip Strength Average Result","([grip_strength_2]+[grip_strength_4]+ [grip_strength_6])/3",,,,,,,y,,,,,
+ergo_bike_date,ergometer_bicycle_setting,,text,"Date Bike Setting Performed",,,date_dmy,,,,,y,,,,,
+ergo_bike_time,ergometer_bicycle_setting,,text,"Time Bike Setting Performed",,,time,,,,,y,,,,,
+ergo_bike,ergometer_bicycle_setting,,yesno,"1. Did Participant Perform The Ergometer Cycle Bike Setting?",,,,,,,,y,,,,,
+ergo_bike_setting,ergometer_bicycle_setting,,text,"2. What Was The Determined Ergometer Bike Setting For The Participant?",,,,,,,,y,,,,,
+vo2_test_date,exercise_capacity_test_vo2peak,,text,"Date Participant Performed VO2 Peak Testing",,,date_dmy,,,,,y,,,,,
+vo2_test_time,exercise_capacity_test_vo2peak,,text,"Time Participant Performed VO2 Peak Testing",,,time,,,,,y,,,,,
+vo2_disinfect1,exercise_capacity_test_vo2peak,"VO2 PEAK TEST SETUP",yesno,"1. Was All Equipment Disinfected/Sanitized Prior To Use (Stationary Bike, Stadiometer, Heart Rate Monitor and Strap, Face Mask and Head Strap)?",,,,,,,,y,,,,,
+vo2_cylinder_calibration,exercise_capacity_test_vo2peak,,yesno,"2. Was Ergo Gas Cylinder Calibrated?",,,,,,,,y,,,,,
+vo2_height_and_weight,exercise_capacity_test_vo2peak,,yesno,"3. Did Participant Have Height And Weight Taken Using Stadiometer?",,,,,,,,,,,,,
+vo2_height,exercise_capacity_test_vo2peak,,text,"4. Participant Height (in cm.)",,,,,,,,y,,,,,
+vo2_weight,exercise_capacity_test_vo2peak,,text,"5. Participant Weight (in kg)",,,,,,,,y,,,,,
+vo2_age,exercise_capacity_test_vo2peak,,text,"6. Participant Age?",,,number,60,100,,,y,,,,,
+vo2_predicted_hrmax,exercise_capacity_test_vo2peak,,calc,"7. Paticipant Age Predicted HRmax (in bpm)",207-(0.7*([vo2_age])),,,,,,,y,,,,,"Equation: 207-(0.7*Age(yrs))"
+vo2_hr_sync,exercise_capacity_test_vo2peak,,yesno,"8. Was Heart Rate Monitor Successfully Synced With Heart Rate App On IPAD?",,,,,,,,y,,,,,
+vo2_hr_monitor,exercise_capacity_test_vo2peak,,yesno,"8a. Was Participant Fitted With Heart Rate Monitor?",,,,,,,"[vo2_hr_sync] = '1'",y,,,,,
+vo2_face_mask_and_strap,exercise_capacity_test_vo2peak,,yesno,"9. Was Participant Fitted With Appropriate Face Mask and Head Strap?",,,,,,,,y,,,,,
+vo2_seat_height,exercise_capacity_test_vo2peak,,text,"10. What Was Participant Seat Height Setting?",,,,,,,,y,,,,,
+vo2_resting_hr,exercise_capacity_test_vo2peak,"RESTING PHASE (2 minutes total)",text,"12. HR (bpm)",,,,,,,,y,,,,,"Take Value When Time Remaining Is 1:45"
+vo2_resting_rpm,exercise_capacity_test_vo2peak,,text,"13. RPM (50 - 70)",,,number,,,,,y,,,,,"RPM = 50-70"
+vo2_resting_vo2,exercise_capacity_test_vo2peak,,text,"14. VO2 (mL/kg/min)",,,,,,,,y,,,,,"Take Value When Time Remaining Is 1:45"
+vo2_resting_watt,exercise_capacity_test_vo2peak,,text,"15. Watt",,,number,,,,,y,,,,,
+vo2_resting_rq,exercise_capacity_test_vo2peak,,text,"16. RQ",,,,,,,,y,,,,,"Take Value When Time Remaining Is 1:45"
+vo2_resting_rpe,exercise_capacity_test_vo2peak,,text,"17. RPE (6-20)",,,,,,,,y,,,,,"Take Value When Time Remaining Is 1:45"
+vo2_resting_complete,exercise_capacity_test_vo2peak,,yesno,"18. Was This Phase Completed?",,,,,,,,y,,,,,
+vo2_warm_up_hr,exercise_capacity_test_vo2peak,"WARM-UP PHASE (5 minutes total)",text,"19. HR (bpm)",,,,,,,"[vo2_resting_complete] = '1'",y,,,,,"Take Value When Time Remaining Is 6:45"
+vo2_warm_up_rpm,exercise_capacity_test_vo2peak,,text,"20. RPM (50-70)",,,,,,,"[vo2_resting_complete] = '1'",y,,,,,"Take Value When Time Remaining Is 6:45"
+vo2_warm_up_vo2,exercise_capacity_test_vo2peak,,text,"21. VO2 (mL/kg/min)",,,,,,,"[vo2_resting_complete] = '1'",y,,,,,"Take Value When Time Remaining Is 6:45"
+vo2_warm_up_watt,exercise_capacity_test_vo2peak,,text,"22. Watt",,,number,,,,"[vo2_resting_complete] = '1'",y,,,,,
+vo2_warm_up_rq,exercise_capacity_test_vo2peak,,text,"23. RQ",,,,,,,"[vo2_resting_complete] = '1'",y,,,,,"Take Value When Time Remaining Is 6:45"
+vo2_warm_up_rpe,exercise_capacity_test_vo2peak,,text,"24. RPE (6-20)",,,,,,,"[vo2_resting_complete] = '1'",y,,,,,"Take Value When Time Remaining Is 6:45"
+vo2_warm_up_complete,exercise_capacity_test_vo2peak,,yesno,"25. Was This Phase Completed?",,,,,,,"[vo2_resting_complete] = '1'",y,,,,,
+vo2_1_hr,exercise_capacity_test_vo2peak,"EXERCISE PHASE 1 (3 minutes total)",text,"23. HR (bpm)",,,,,,,"[vo2_warm_up_complete] = '1'",y,,,,,"Take Value When Time Remaining Is 9:45"
+vo2_1_rpm,exercise_capacity_test_vo2peak,,text,"24. RPM (50-70)",,,,,,,"[vo2_warm_up_complete] = '1'",y,,,,,"Take Value When Time Remaining Is 9:45"
+vo2_1_vo2,exercise_capacity_test_vo2peak,,text,"25. VO2 (mL/kg/min)",,,,,,,"[vo2_warm_up_complete] = '1'",y,,,,,"Take Value When Time Remaining Is 9:45"
+vo2_1_watt,exercise_capacity_test_vo2peak,,text,"26. Watt",,,number,,,,"[vo2_warm_up_complete] = '1'",y,,,,,
+vo2_1_rq,exercise_capacity_test_vo2peak,,text,"27. RQ",,,,,,,"[vo2_warm_up_complete] = '1'",y,,,,,"Take Value When Time Remaining Is 9:45"
+vo2_1_rpe,exercise_capacity_test_vo2peak,,text,"28. RPE (6-20)",,,,,,,"[vo2_warm_up_complete] = '1'",y,,,,,"Take Value When Time Remaining Is 9:45"
+vo2_1_complete,exercise_capacity_test_vo2peak,,yesno,"29. Was This Phase Completed?",,,,,,,"[vo2_warm_up_complete] = '1'",y,,,,,
+vo2_2_hr,exercise_capacity_test_vo2peak,"EXERCISE PHASE 2 (3 minutes total)",text,"30. HR (bpm)",,,,,,,"[vo2_1_complete] = '1'",y,,,,,"Take Value When Time Remaining Is 12:45"
+vo2_2_rpm,exercise_capacity_test_vo2peak,,text,"31. RPM (50-70)",,,,,,,"[vo2_1_complete] = '1'",y,,,,,"Take Value When Time Remaining Is 12:45"
+vo2_2_vo2,exercise_capacity_test_vo2peak,,text,"32. VO2 (mL/kg/min)",,,,,,,"[vo2_1_complete] = '1'",y,,,,,"Take Value When Time Remaining Is 12:45"
+vo2_2_watt_2,exercise_capacity_test_vo2peak,,text,"33. Watt",,,number,,,,"[vo2_1_complete] = '1'",y,,,,,
+vo2_2_rq,exercise_capacity_test_vo2peak,,text,"34. RQ",,,,,,,"[vo2_1_complete] = '1'",y,,,,,"Take Value When Time Remaining Is 12:45"
+vo2_2_rpe,exercise_capacity_test_vo2peak,,text,"35. RPE (6-20)",,,,,,,"[vo2_1_complete] = '1'",y,,,,,"Take Value When Time Remaining Is 12:45"
+vo2_2_complete,exercise_capacity_test_vo2peak,,yesno,"36. Was This Phase Completed?",,,,,,,"[vo2_1_complete] = '1'",y,,,,,
+vo2_3_hr,exercise_capacity_test_vo2peak,"EXERCISE PHASE 3 (3 minutes total)",text,"37. HR (bpm)",,,,,,,"[vo2_2_complete] = '1'",y,,,,,"Take Value When Time Remaining Is 15:45"
+vo2_3_rpm,exercise_capacity_test_vo2peak,,text,"38. RPM (50-70)",,,,,,,"[vo2_2_complete] = '1'",y,,,,,"Take Value When Time Remaining Is 15:45"
+vo2_3_vo2,exercise_capacity_test_vo2peak,,text,"39. VO2 (mL/kg/min)",,,,,,,"[vo2_2_complete] = '1'",y,,,,,"Take Value When Time Remaining Is 15:45"
+vo2_3_watt,exercise_capacity_test_vo2peak,,text,"40. Watt",,,number,,,,"[vo2_2_complete] = '1'",y,,,,,
+vo2_3_rq,exercise_capacity_test_vo2peak,,text,"41. RQ",,,,,,,"[vo2_2_complete] = '1'",y,,,,,"Take Value When Time Remaining Is 15:45"
+vo2_3_rpe,exercise_capacity_test_vo2peak,,text,"42. RPE (6-20)",,,,,,,"[vo2_2_complete] = '1'",y,,,,,"Take Value When Time Remaining Is 15:45"
+vo2_3_complete,exercise_capacity_test_vo2peak,,yesno,"43. Was This Phase Completed?",,,,,,,"[vo2_2_complete] = '1'",y,,,,,
+vo2_4_hr,exercise_capacity_test_vo2peak,"EXERCISE PHASE 4 (3 minutes total)",text,"44. HR (bpm)",,,,,,,"[vo2_3_complete] = '1'",y,,,,,"Take Value When Time Remaining Is 18:45"
+vo2_4_rpm,exercise_capacity_test_vo2peak,,text,"45. RPM (50-70)",,,,,,,"[vo2_3_complete] = '1'",y,,,,,"Take Value When Time Remaining Is 18:45"
+vo2v_4_vo2,exercise_capacity_test_vo2peak,,text,"46. VO2 (mL/kg/min)",,,,,,,"[vo2_3_complete] = '1'",y,,,,,"Take Value When Time Remaining Is 18:45"
+vo2_4_watt,exercise_capacity_test_vo2peak,,text,"47. Watt",,,number,,,,"[vo2_3_complete] = '1'",y,,,,,
+vo2_4_rq,exercise_capacity_test_vo2peak,,text,"48. RQ",,,,,,,"[vo2_3_complete] = '1'",y,,,,,"Take Value When Time Remaining Is 18:45"
+vo2_4_rpe,exercise_capacity_test_vo2peak,,text,"49. RPE (6-20)",,,,,,,"[vo2_3_complete] = '1'",y,,,,,"Take Value When Time Remaining Is 18:45"
+vo2_4_complete,exercise_capacity_test_vo2peak,,yesno,"50. Was This Phase Completed?",,,,,,,"[vo2_3_complete] = '1'",y,,,,,
+vo2_5_hr,exercise_capacity_test_vo2peak,"EXERCISE PHASE 5 (3 minutes total)",text,"51. HR (bpm)",,,,,,,"[vo2_4_complete] = '1'",y,,,,,"Take Value When Time Remaining Is 21:45"
+vo2_5_rpm,exercise_capacity_test_vo2peak,,text,"52. RPM (50-70)",,,,,,,"[vo2_4_complete] = '1'",y,,,,,"Take Value When Time Remaining Is 21:45"
+vo2_5_vo2,exercise_capacity_test_vo2peak,,text,"53. VO2 (mL/kg/min)",,,,,,,"[vo2_4_complete] = '1'",y,,,,,"Take Value When Time Remaining Is 21:45"
+vo2_5_watt,exercise_capacity_test_vo2peak,,text,"54. Watt",,,number,,,,"[vo2_4_complete] = '1'",y,,,,,
+vo2_5_rq,exercise_capacity_test_vo2peak,,text,"55. RQ",,,,,,,"[vo2_4_complete] = '1'",y,,,,,"Take Value When Time Remaining Is 21:45"
+vo2_5_rpe,exercise_capacity_test_vo2peak,,text,"56. RPE (6-20)",,,,,,,"[vo2_4_complete] = '1'",y,,,,,"Take Value When Time Remaining Is 21:45"
+vo2_5_complete,exercise_capacity_test_vo2peak,,yesno,"57. Was This Phase Completed?",,,,,,,"[vo2_4_complete] = '1'",y,,,,,
+vo2_6_hr,exercise_capacity_test_vo2peak,"EXERCISE PHASE 6 (3 minutes total)<br><br>",text,"58. HR (bpm)",,,,,,,"[vo2_5_complete] = '1'",y,,,,,"Take Value When Time Remaining Is 21:45"
+vo2_6_rpm,exercise_capacity_test_vo2peak,,text,"59. RPM (50-70)",,,,,,,"[vo2_5_complete] = '1'",y,,,,,"Take Value When Time Remaining Is 21:45"
+vo2_6_vo2,exercise_capacity_test_vo2peak,,text,"60. VO2 (mL/kg/min)",,,,,,,"[vo2_5_complete] = '1'",y,,,,,"Take Value When Time Remaining Is 21:45"
+vo2_6_watt,exercise_capacity_test_vo2peak,,text,"61. Watt",,,number,,,,"[vo2_5_complete] = '1'",y,,,,,
+vo2_6_rq,exercise_capacity_test_vo2peak,,text,"62. RQ",,,,,,,"[vo2_5_complete] = '1'",y,,,,,"Take Value When Time Remaining Is 21:45"
+vo2_6_rpe,exercise_capacity_test_vo2peak,,text,"63. RPE (6-20)",,,,,,,"[vo2_5_complete] = '1'",y,,,,,"Take Value When Time Remaining Is 21:45"
+vo2_6_complete,exercise_capacity_test_vo2peak,,yesno,"64. Was This Phase Completed?",,,,,,,"[vo2_5_complete] = '1'",y,,,,,
+vo2_7_hr,exercise_capacity_test_vo2peak,"EXERCISE PHASE 7 (3 minutes total)
+
+",text,"65. HR (bpm)",,,,,,,"[vo2_6_complete] = '1'",y,,,,,"Take Value When Time Remaining Is 24:45"
+vo2_7_rpm,exercise_capacity_test_vo2peak,,text,"66. RPM (50-70)",,,,,,,"[vo2_6_complete] = '1'",y,,,,,"Take Value When Time Remaining Is 24:45"
+vo2_7_vo2,exercise_capacity_test_vo2peak,,text,"67. VO2 (mL/kg/min)",,,,,,,"[vo2_6_complete] = '1'",y,,,,,"Take Value When Time Remaining Is 21:45"
+vo2_7_watt,exercise_capacity_test_vo2peak,,text,"68. Watt",,,number,,,,"[vo2_6_complete] = '1'",y,,,,,
+vo2_7_rq,exercise_capacity_test_vo2peak,,text,"69. RQ",,,,,,,"[vo2_6_complete] = '1'",y,,,,,"Take Value When Time Remaining Is 21:45"
+vo2_7_rpe,exercise_capacity_test_vo2peak,,text,"70. RPE (6-20)",,,,,,,"[vo2_6_complete] = '1'",y,,,,,"Take Value When Time Remaining Is 21:45"
+vo2_7_complete,exercise_capacity_test_vo2peak,,yesno,"71. Was This Phase Completed?",,,,,,,"[vo2_6_complete] = '1'",y,,,,,
+vo2_recovery_min1_hr,exercise_capacity_test_vo2peak,"RECOVERY PHASE (3 minutes total)",text,"72. Minute 1 Heart Rate (bpm)",,,,,,,,y,,,,,
+vo2_recovery_min1_rpm,exercise_capacity_test_vo2peak,,text,"73. Minute 1 RPM (50-70)",,,,,,,,y,,,,,
+vo2_recovery_min2_hr,exercise_capacity_test_vo2peak,,text,"74. Minute 2 Heart Rate (bpm)",,,,,,,,y,,,,,
+vo2_recovery_min2_rpm,exercise_capacity_test_vo2peak,,text,"75. Minute 2 RPM (50-70)",,,,,,,,y,,,,,
+vo2_recovery_min3_hr,exercise_capacity_test_vo2peak,,text,"76. Minute 3 Heart Rate (bpm)",,,,,,,,y,,,,,
+vo2_recovery_min3_rpm,exercise_capacity_test_vo2peak,,text,"77. Minute 3 RPM (50-70)",,,,,,,,y,,,,,
+vo2_recovery_complete,exercise_capacity_test_vo2peak,,yesno,"78. Was This Phase Completed?",,,,,,,,y,,,,,
+vo2_peak_hr,exercise_capacity_test_vo2peak,"SUMMARY DATA",text,"79. Peak Heart Rate (bpm)",,,,,,,,y,,,,,
+vo2_peak_watts,exercise_capacity_test_vo2peak,,text,"80. Peak Watt",,,,,,,,y,,,,,
+vo2_peak_vo2,exercise_capacity_test_vo2peak,,text,"81. Peak VO2 (mL/kg/min)",,,,,,,,y,,,,,
+vo2_percent_peak_hr,exercise_capacity_test_vo2peak,,calc,"82. 70% Peak HR (bpm)",([vo2_peak_hr]*0.7),,,,,,,y,,,,,"Equation: 0.7*Peak HR"
+vo2_classification,exercise_capacity_test_vo2peak,,text,"83. Classification",,,,,,,,,,,,,
+vo2_disinfect2,exercise_capacity_test_vo2peak,,yesno,"84. Was All Equipment Disinfected/Sanitized After Use (Stationary Bike, Stadiometer, Heart Rate Monitor and Strap, Face Mask and Head Strap)?",,,,,,,,y,,,,,
+vo2_notes,exercise_capacity_test_vo2peak,,notes,,,,,,,,,,,,,,
+im_temp_measure_date,intramuscular_im_temperature_measure,,text,"Date Intramuscular Temperature Measurement Performed?",,,date_dmy,,,,,y,,,,,
+im_temp_measure_time,intramuscular_im_temperature_measure,,text,"Time Intramuscular Temperature Measurement Performed?",,,time,,,,,y,,,,,
+im_temp_leg,intramuscular_im_temperature_measure,"TIME 0 (mins) ",dropdown,"IM Probe Leg","1, Right | 2, Left",,,,,,,,,,,,
+im_temp_heat_pad,intramuscular_im_temperature_measure,,text,"1. Heating Pad Temperature (°C)",,,number,,,,,y,,,,,
+imt_im,intramuscular_im_temperature_measure,,text,"2. IM Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_skin,intramuscular_im_temperature_measure,,text,"3. IM Skin Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_skin_opposite,intramuscular_im_temperature_measure,,text,"4. Skin Temperature (°C)",,,number,,,,,y,,,,,
+im_room_temp,intramuscular_im_temperature_measure,,text,"5. Room Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_forehead,intramuscular_im_temperature_measure,,text,"6. Forehead Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_heat_pad_2,intramuscular_im_temperature_measure,"TIME 5 (mins) ",text,"7. Heating Pad Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_temperature_2,intramuscular_im_temperature_measure,,text,"8. IM Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_skin_2,intramuscular_im_temperature_measure,,text,"9. IM Skin Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_skin_opposite_2,intramuscular_im_temperature_measure,,text,"10. Skin Temperature (°C)",,,number,,,,,y,,,,,
+im_room_temp_2,intramuscular_im_temperature_measure,,text,"11. Room Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_forehead_2,intramuscular_im_temperature_measure,,text,"12. Forehead Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_heat_pad_3,intramuscular_im_temperature_measure,"TIME 10 (mins) ",text,"13. Heating Pad Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_temperature_3,intramuscular_im_temperature_measure,,text,"14. IM Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_skin_3,intramuscular_im_temperature_measure,,text,"15. IM Skin Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_skin_opposite_3,intramuscular_im_temperature_measure,,text,"16.  Skin Temperature (°C)",,,number,,,,,y,,,,,
+im_room_temp_3,intramuscular_im_temperature_measure,,text,"17. Room Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_forehead_3,intramuscular_im_temperature_measure,,text,"18. Forehead Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_heat_pad_4,intramuscular_im_temperature_measure,"TIME 15 (mins)",text,"19. Heating Pad Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_temperature_4,intramuscular_im_temperature_measure,,text,"20. IM Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_skin_4,intramuscular_im_temperature_measure,,text,"21. IM Skin Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_skin_opposite_4,intramuscular_im_temperature_measure,,text,"22. Skin Temperature (°C)",,,number,,,,,y,,,,,
+im_room_temp_4,intramuscular_im_temperature_measure,,text,"23. Room Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_forehead_4,intramuscular_im_temperature_measure,,text,"24. Forehead Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_heat_pad_5,intramuscular_im_temperature_measure,"TIME 20 (mins)",text,"25. Heating Pad Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_temperature_5,intramuscular_im_temperature_measure,,text,"26. IM Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_skin_5,intramuscular_im_temperature_measure,,text,"27. IM Skin Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_skin_opposite_5,intramuscular_im_temperature_measure,,text,"28. Skin Temperature (°C)",,,number,,,,,y,,,,,
+im_room_temp_5,intramuscular_im_temperature_measure,,text,"29. Room Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_forehead_5,intramuscular_im_temperature_measure,,text,"30. Forehead Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_heat_pad_6,intramuscular_im_temperature_measure,"TIME 25 (mins)",text,"31. Heating Pad Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_temperature_6,intramuscular_im_temperature_measure,,text,"32. IM Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_skin_6,intramuscular_im_temperature_measure,,text,"33. IM Skin Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_skin_opposite_6,intramuscular_im_temperature_measure,,text,"34. Skin Temperature (°C)",,,number,,,,,y,,,,,
+im_room_temp_6,intramuscular_im_temperature_measure,,text,"35. Room Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_forehead_6,intramuscular_im_temperature_measure,,text,"36. Forehead Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_heat_pad_7,intramuscular_im_temperature_measure,"TIME 30 (mins)",text,"37. Heating Pad Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_temperature_7,intramuscular_im_temperature_measure,,text,"38. IM Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_skin_7,intramuscular_im_temperature_measure,,text,"39. IM Skin Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_skin_opposite_7,intramuscular_im_temperature_measure,,text,"40. Skin Temperature (°C)",,,number,,,,,y,,,,,
+im_room_temp_7,intramuscular_im_temperature_measure,,text,"41. Room Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_forehead_7,intramuscular_im_temperature_measure,,text,"42. Forehead Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_heat_pad_8,intramuscular_im_temperature_measure,"TIME 40 (mins)",text,"43. Heating Pad Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_temperature_8,intramuscular_im_temperature_measure,,text,"44. IM Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_skin_8,intramuscular_im_temperature_measure,,text,"45. IM Skin Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_skin_opposite_8,intramuscular_im_temperature_measure,,text,"46. Skin Temperature (°C)",,,number,,,,,y,,,,,
+im_room_temp_8,intramuscular_im_temperature_measure,,text,"47. Room Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_forehead_8,intramuscular_im_temperature_measure,,text,"48. Forehead Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_heat_pad_9,intramuscular_im_temperature_measure,"TIME 50 (mins)",text,"49. Heating Pad Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_temperature_9,intramuscular_im_temperature_measure,,text,"50. IM Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_skin_9,intramuscular_im_temperature_measure,,text,"51. IM Skin Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_skin_opposite_9,intramuscular_im_temperature_measure,,text,"52. Skin Temperature (°C)",,,number,,,,,y,,,,,
+im_room_temp_9,intramuscular_im_temperature_measure,,text,"53. Room Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_forehead_9,intramuscular_im_temperature_measure,,text,"54. Forehead Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_heat_pad_10,intramuscular_im_temperature_measure,"TIME 60 (mins)",text,"55. Heating Pad Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_temperature_10,intramuscular_im_temperature_measure,,text,"56. IM Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_skin_10,intramuscular_im_temperature_measure,,text,"57. IM Skin Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_skin_opposite_10,intramuscular_im_temperature_measure,,text,"58. Skin Temperature (°C)",,,number,,,,,y,,,,,
+im_room_temp_10,intramuscular_im_temperature_measure,,text,"59. Room Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_forehead_10,intramuscular_im_temperature_measure,,text,"60. Forehead Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_heat_pad_11,intramuscular_im_temperature_measure,"TIME 70 (mins)",text,"61. Heating Pad Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_temperature_11,intramuscular_im_temperature_measure,,text,"62. IM Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_skin_11,intramuscular_im_temperature_measure,,text,"63. IM Skin Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_skin_opposite_11,intramuscular_im_temperature_measure,,text,"64. Skin Temperature (°C)",,,number,,,,,y,,,,,
+im_room_temp_11,intramuscular_im_temperature_measure,,text,"65. Room Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_forehead_11,intramuscular_im_temperature_measure,,text,"66. Forehead Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_heat_pad_12,intramuscular_im_temperature_measure,"TIME 80 (mins)",text,"67. Heating Pad Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_temperature_12,intramuscular_im_temperature_measure,,text,"68. IM Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_skin_12,intramuscular_im_temperature_measure,,text,"69. IM Skin Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_skin_opposite_12,intramuscular_im_temperature_measure,,text,"70. Skin Temperature (°C)",,,number,,,,,y,,,,,
+im_room_temp_12,intramuscular_im_temperature_measure,,text,"71. Room Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_forehead_12,intramuscular_im_temperature_measure,,text,"72. Forehead Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_heat_pad_13,intramuscular_im_temperature_measure,"TIME 90 (mins)",text,"73. Heating Pad Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_temperature_13,intramuscular_im_temperature_measure,,text,"74. IM Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_skin_13,intramuscular_im_temperature_measure,,text,"75. IM Skin Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_skin_opposite_13,intramuscular_im_temperature_measure,,text,"76. Skin Temperature (°C)",,,number,,,,,y,,,,,
+im_room_temp_13,intramuscular_im_temperature_measure,,text,"77. Room Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_forehead_13,intramuscular_im_temperature_measure,,text,"78. Forehead Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_heat_pad_14,intramuscular_im_temperature_measure,"COOLDOWN TIME 100 (mins)",text,"79. Heating Pad Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_temperature_14,intramuscular_im_temperature_measure,,text,"80. IM Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_skin_14,intramuscular_im_temperature_measure,,text,"81. IM Skin Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_skin_opposite_14,intramuscular_im_temperature_measure,,text,"82. Skin Temperature (°C)",,,number,,,,,y,,,,,
+im_room_temp_14,intramuscular_im_temperature_measure,,text,"83. Room Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_forehead_14,intramuscular_im_temperature_measure,,text,"84. Forehead Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_heat_pad_15,intramuscular_im_temperature_measure,"COOLDOWN TIME 110 (mins)",text,"85. Heating Pad Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_temperature_15,intramuscular_im_temperature_measure,,text,"86. IM Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_skin_15,intramuscular_im_temperature_measure,,text,"87. IM Skin Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_skin_opposite_15,intramuscular_im_temperature_measure,,text,"88. Skin Temperature (°C)",,,number,,,,,y,,,,,
+im_room_temp_15,intramuscular_im_temperature_measure,,text,"89. Room Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_forehead_15,intramuscular_im_temperature_measure,,text,"90. Forehead Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_heat_pad_16,intramuscular_im_temperature_measure,"COOLDOWN TIME 120 (mins)",text,"91. Heating Pad Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_temperature_16,intramuscular_im_temperature_measure,,text,"92. IM Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_skin_16,intramuscular_im_temperature_measure,,text,"93. IM Skin Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_skin_opposite_16,intramuscular_im_temperature_measure,,text,"94. Skin Temperature (°C)",,,number,,,,,y,,,,,
+im_room_temp_16,intramuscular_im_temperature_measure,,text,"95. Room Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_forehead_16,intramuscular_im_temperature_measure,,text,"96. Forehead Temperature (°C)",,,number,,,,,y,,,,,
+im_temp_peak,intramuscular_im_temperature_measure,"SUMMARY DATA",text,"97. Peak IM Temp (°C)",,,number,,,,,y,,,,,
+im_temp_peak_skin_temp,intramuscular_im_temperature_measure,,text,"98. Peak Skin Temp (°C)",,,number,,,,,y,,,,,
+im_temp_established,intramuscular_im_temperature_measure,,yesno,"99. Was Heat Pad Temperature Needed To Raise The Intramuscular (IM) Temperature To Approximately 40°C Established?",,,,,,,,y,,,,,
+im_temp_setting,intramuscular_im_temperature_measure,,text,"100.  What Is The Determined Heat Pad Temperature Setting (°C) For Participant?
+",,,number,,,,,y,,,,,"In Celsius "
+im_temp_blood_spillage,intramuscular_im_temperature_measure,,yesno,"101. Were Surfaces Contaminated With Blood Spillage Cleaned And Disinfected?",,,,,,,,,,,,,
+im_temp_notes,intramuscular_im_temperature_measure,,notes,,,,,,,,,,,,,,
+heatpad_session_date,min_inlab_heat_pad_therapy_session,,text,"1. Date Of In-Lab Heat Pad Therapy Visit",,,date_dmy,,,,,y,,,,,
+heatpad_session,min_inlab_heat_pad_therapy_session,,yesno,"2. Did Participant Show To In-Lab Heat Pad Therapy Visit?",,,,,,,,y,,,,,
+hetapad_session_notes,min_inlab_heat_pad_therapy_session,,notes,"2a. If Participant Did Not Show To In-Lab Heat Pad Therapy Visit Why Not?",,,,,,,"[heatpad_session] = '0'",y,,,,,
+heatpad_log_collection,min_inlab_heat_pad_therapy_session,,yesno,"3. Was At Home Heat Pad Therapy Log Collected From Participant?",,,,,,,,y,,,,,
+heatpad_log_complete,min_inlab_heat_pad_therapy_session,,yesno,"3a.  Was At Home Heat Pad Therapy Log Accurately Completed For All Corresponding Days?",,,,,,,"[heatpad_log_collection] = '1'",y,,,,,
+heatpad_log_complete_notes,min_inlab_heat_pad_therapy_session,,notes,"3b. If No To Question 3a, Please Explain",,,,,,,"[heatpad_log_complete] = '0'",y,,,,,
+heatpad_log_upload,min_inlab_heat_pad_therapy_session,,file,"3c. Upload Home Heat Session Log",,,,,,,"[heatpad_log_collection] = '1'",,,,,,
+heatpad_log_upload_notes,min_inlab_heat_pad_therapy_session,,notes,"3d. If No To Question 3, Please Explain",,,,,,,"[heatpad_log_collection] = '0'",y,,,,,
+heatpad_systolic_1,min_inlab_heat_pad_therapy_session,"1ST BLOOD PRESSURE READING (10min)",text,"7. Systolic Measurment (mmHg)",,,,,,,,,,,,,
+heatpad_diastolic_1,min_inlab_heat_pad_therapy_session,,text,"8. Diastolic Measurment (mmHg)",,,,,,,,,,,,,
+heatpad_hr_1,min_inlab_heat_pad_therapy_session,,text,"9. Pulse (Heart Rate) Measurment",,,,,,,,,,,,,
+heatpad_position_1,min_inlab_heat_pad_therapy_session,,radio,"10. Position Of Participant During Blood Pressure Reading","1, Seated | 2, Supine",,,,,,,,,,,,
+heatpad_systolic_2,min_inlab_heat_pad_therapy_session,"2ND BLOOD PRESSURE READING (20min)",text,"11. Systolic Measurment (mmHg)",,,,,,,,,,,,,
+heatpad_diastolic_2,min_inlab_heat_pad_therapy_session,,text,"12. Diastolic Measurment (mmHg)",,,,,,,,,,,,,
+heatpad_hr_2,min_inlab_heat_pad_therapy_session,,text,"13. Pulse (Heart Rate) Measurment",,,,,,,,,,,,,
+heatpad_position_2,min_inlab_heat_pad_therapy_session,,radio,"14. Position Of Participant During Blood Pressure Reading","1, Seated | 2, Supine",,,,,,,,,,,,
+heatpad_systolic_3,min_inlab_heat_pad_therapy_session,"3RD BLOOD PRESSURE READING (30min)",text,"15. Systolic Measurment (mmHg)",,,,,,,,,,,,,
+heatpad_diastolic_3,min_inlab_heat_pad_therapy_session,,text,"16. Diastolic Measurment (mmHg)",,,,,,,,,,,,,
+heatpad_hr_3,min_inlab_heat_pad_therapy_session,,text,"17. Pulse (Heart Rate) Measurment",,,,,,,,,,,,,
+heatpad_position_3,min_inlab_heat_pad_therapy_session,,radio,"18. Position Of Participant During Blood Pressure Reading","1, Seated | 2, Supine",,,,,,,,,,,,
+heatpad_systolic_4,min_inlab_heat_pad_therapy_session,"4TH BLOOD PRESSURE READING (40min)",text,"19. Systolic Measurment (mmHg)",,,,,,,,,,,,,
+heatpad_diastolic_4,min_inlab_heat_pad_therapy_session,,text,"20. Diastolic Measurment (mmHg)",,,,,,,,,,,,,
+heatpad_hr_4,min_inlab_heat_pad_therapy_session,,text,"21. Pulse (Heart Rate) Measurment",,,,,,,,,,,,,
+heatpad_position_4,min_inlab_heat_pad_therapy_session,,radio,"22. Position Of Participant During Blood Pressure Reading","1, Seated | 2, Supine",,,,,,,,,,,,
+heatpad_systolic_5,min_inlab_heat_pad_therapy_session,"5TH BLOOD PRESSURE READING (50min)",text,"23. Systolic Measurment (mmHg)",,,,,,,,,,,,,
+heatpad_diastolic_5,min_inlab_heat_pad_therapy_session,,text,"24. Diastolic Measurment (mmHg)",,,,,,,,,,,,,
+heatpad_hr_5,min_inlab_heat_pad_therapy_session,,text,"25. Pulse (Heart Rate) Measurment",,,,,,,,,,,,,
+heatpad_position_5,min_inlab_heat_pad_therapy_session,,radio,"26. Position Of Participant During Blood Pressure Reading","1, Seated | 2, Supine",,,,,,,,,,,,
+heatpad_systolic_6,min_inlab_heat_pad_therapy_session,"6TH BLOOD PRESSURE READING (60min)",text,"27. Systolic Measurment (mmHg)",,,,,,,,,,,,,
+heatpad_diastolic_6,min_inlab_heat_pad_therapy_session,,text,"28. Diastolic Measurment (mmHg)",,,,,,,,,,,,,
+heatpad_hr_6,min_inlab_heat_pad_therapy_session,,text,"29. Pulse (Heart Rate) Measurment",,,,,,,,,,,,,
+heatpad_position_6,min_inlab_heat_pad_therapy_session,,radio,"30. Position Of Participant During Blood Pressure Reading","1, Seated | 2, Supine",,,,,,,,,,,,
+heatpad_systolic_7,min_inlab_heat_pad_therapy_session,"7TH BLOOD PRESSURE READING (70min)",text,"31. Systolic Measurment (mmHg)",,,,,,,,,,,,,
+heatpad_diastolic_7,min_inlab_heat_pad_therapy_session,,text,"32. Diastolic Measurment (mmHg)",,,,,,,,,,,,,
+heatpad_hr_7,min_inlab_heat_pad_therapy_session,,text,"33. Pulse (Heart Rate) Measurment",,,,,,,,,,,,,
+heatpad_position_7,min_inlab_heat_pad_therapy_session,,radio,"34. Position Of Participant During Blood Pressure Reading","1, Seated | 2, Supine",,,,,,,,,,,,
+heatpad_systolic_8,min_inlab_heat_pad_therapy_session,"8TH BLOOD PRESSURE READING (80min)",text,"35. Systolic Measurment (mmHg)",,,,,,,,,,,,,
+heatpad_diastolic_8,min_inlab_heat_pad_therapy_session,,text,"36. Diastolic Measurment (mmHg)",,,,,,,,,,,,,
+heatpad_hr_8,min_inlab_heat_pad_therapy_session,,text,"37. Pulse (Heart Rate) Measurment",,,,,,,,,,,,,
+heatpad_position_8,min_inlab_heat_pad_therapy_session,,radio,"38. Position Of Participant During Blood Pressure Reading","1, Seated | 2, Supine",,,,,,,,,,,,
+heatpad_systolic_9,min_inlab_heat_pad_therapy_session,"9TH BLOOD PRESSURE READING (90min)",text,"39. Systolic Measurment (mmHg)",,,,,,,,,,,,,
+heatpad_diastolic_9,min_inlab_heat_pad_therapy_session,,text,"40. Diastolic Measurment (mmHg)",,,,,,,,,,,,,
+heatpad_hr_9,min_inlab_heat_pad_therapy_session,,text,"41. Pulse (Heart Rate) Measurment",,,,,,,,,,,,,
+heatpad_position_9,min_inlab_heat_pad_therapy_session,,radio,"42. Position Of Participant During Blood Pressure Reading","1, Seated | 2, Supine",,,,,,,,,,,,
+heatpad_comments,min_inlab_heat_pad_therapy_session,,notes,,,,,,,,,,,,,,
+hiit1_date,highintensity_interval_training_hiit_session_1,,text,"1. Date Participant Performed High-Intensity Interval Training",,,date_dmy,,,,,y,,,,,
+hiit1_time,highintensity_interval_training_hiit_session_1,,text,"2. Time Participant Performed High-Intensity Interval Training",,,time,,,,,y,,,,,
+hiit1_bike_disinfected,highintensity_interval_training_hiit_session_1,,yesno,"3. Was Stationary Bike Sanitized/Disinfected Prior To Use?",,,,,,,,y,,,,,
+hiit1_seat_rung,highintensity_interval_training_hiit_session_1,,text,"4. Which Rung Was Seat Height Adjusted To?",,,,,,,,y,,,,,
+hiit1_hr,highintensity_interval_training_hiit_session_1,"WARM-UP PHASE (0min - 4:59min)",text,"5. HR (bpm)",,,,,,,,y,,,,,"Record Value At 4:45"
+hiit1_gear,highintensity_interval_training_hiit_session_1,,text,"6. Gear",,,,,,,,y,,,,,"Record Value At 4:45"
+hiit1_watts,highintensity_interval_training_hiit_session_1,,text,"7. Watts",,,,,,,,y,,,,,
+hiit1_rpe,highintensity_interval_training_hiit_session_1,,text,"8. RPE (6-20)",,,,,,,,y,,,,,"Record Value At 4:45"
+hiit1_hr_2,highintensity_interval_training_hiit_session_1,"EXERCISE PHASE 1 (5min - 8:59min)",text,"9. HR (bpm)",,,,,,,,y,,,,,"Record Value At 8:45"
+hiit1_gear_2,highintensity_interval_training_hiit_session_1,,text,"10. Gear",,,,,,,,y,,,,,"Record Value At 8:45"
+hiit1_watts_2,highintensity_interval_training_hiit_session_1,,text,"11. Watts",,,,,,,,y,,,,,
+hiit1_rpe_2,highintensity_interval_training_hiit_session_1,,text,"12. RPE (6-20)",,,,,,,,y,,,,,"Record Value At 8:45"
+hiit1_hr_3,highintensity_interval_training_hiit_session_1,"RECOVERY PHASE 1 (9min - 11:59min)",text,"13. HR (bpm)",,,,,,,,y,,,,,"Record Value At 11:45"
+hiit1_gear_3,highintensity_interval_training_hiit_session_1,,text,"14. Gear",,,,,,,,y,,,,,"Record Value At 11:45"
+hiit1_watts_3,highintensity_interval_training_hiit_session_1,,text,"15. Watts",,,,,,,,y,,,,,
+hiit1_rpe_3,highintensity_interval_training_hiit_session_1,,text,"16. RPE (6-20)",,,,,,,,y,,,,,"Record Value At 11:45"
+hiit1_hr_4,highintensity_interval_training_hiit_session_1,"EXERCISE PHASE 2 (12min - 15:59)",text,"17. HR (bpm)",,,,,,,,y,,,,,"Record Value At 15:45"
+hiit1_gear_4,highintensity_interval_training_hiit_session_1,,text,"18. Gear",,,,,,,,y,,,,,"Record Value At 15:45"
+hiit1_watts_4,highintensity_interval_training_hiit_session_1,,text,"19. Watts",,,,,,,,y,,,,,
+hiit1_rpe_4,highintensity_interval_training_hiit_session_1,,text,"20. RPE (6-20)",,,,,,,,y,,,,,"Record Value At 15:45"
+hiit1_hr_5,highintensity_interval_training_hiit_session_1,"RECOVERY PHASE 2 (16min - 18:59min)",text,"21. HR (bpm)",,,,,,,,y,,,,,"Record Value At 18:45"
+hiit1_gear_5,highintensity_interval_training_hiit_session_1,,text,"22. Gear",,,,,,,,y,,,,,"Record Value At 18:45"
+hiit1_watts_5,highintensity_interval_training_hiit_session_1,,text,"23. Watts",,,,,,,,y,,,,,
+hiit1_rpe_5,highintensity_interval_training_hiit_session_1,,text,"24. RPE (6-20)",,,,,,,,y,,,,,"Record Value At 18:45"
+hiit1_hr_6,highintensity_interval_training_hiit_session_1,"EXERCISE PHASE 3 (19min - 22:59)",text,"25. HR (bpm)",,,,,,,,y,,,,,"Record Value At 22:45"
+hiit1_gear_6,highintensity_interval_training_hiit_session_1,,text,"26. Gear",,,,,,,,y,,,,,"Record Value At 22:45"
+hiit1_watts_6,highintensity_interval_training_hiit_session_1,,text,"27. Watts",,,,,,,,y,,,,,
+hiit1_rpe_6,highintensity_interval_training_hiit_session_1,,text,"28. RPE (6-20)",,,,,,,,y,,,,,"Record Value At  22:45"
+hiit1_hr_7,highintensity_interval_training_hiit_session_1,"RECOVERY PHASE 3 (23min - 25:59min)",text,"29. HR (bpm)",,,,,,,,y,,,,,"Record Value At 25:45"
+hiit1_gear_7,highintensity_interval_training_hiit_session_1,,text,"30. Gear",,,,,,,,y,,,,,"Record Value At 25:45"
+hiit1_watts_7,highintensity_interval_training_hiit_session_1,,text,"31. Watts",,,,,,,,y,,,,,
+hiit1_rpe_7,highintensity_interval_training_hiit_session_1,,text,"32. RPE (6-20)",,,,,,,,y,,,,,"Record Value At  25:45"
+hiit1_hr_8,highintensity_interval_training_hiit_session_1,"EXERCISE PHASE 4 (26min - 29:59)",text,"33. HR (bpm)",,,,,,,,y,,,,,"Record Value At 29:45"
+hiit1_gear_8,highintensity_interval_training_hiit_session_1,,text,"34. Gear",,,,,,,,y,,,,,"Record Value At 29:45"
+hiit1_watts_8,highintensity_interval_training_hiit_session_1,,text,"35. Watts",,,,,,,,y,,,,,
+hiit1_rpe_8,highintensity_interval_training_hiit_session_1,,text,"36. RPE (6-20)",,,,,,,,y,,,,,"Record Value At  29:45"
+hiit1_hr_9,highintensity_interval_training_hiit_session_1,"RECOVERY PHASE 4 (30min - 33:59min)",text,"37. HR (bpm)",,,,,,,,y,,,,,"Record Value At 33:45"
+hiit1_gear_9,highintensity_interval_training_hiit_session_1,,text,"38. Gear",,,,,,,,y,,,,,"Record Value At 33:45"
+hiit1_watts_9,highintensity_interval_training_hiit_session_1,,text,"39. Watts",,,,,,,,y,,,,,
+hiit1_rpe_9,highintensity_interval_training_hiit_session_1,,text,"40. RPE (6-20)",,,,,,,,y,,,,,"Record Value At  33:45"
+hiit1_vo2_peak,highintensity_interval_training_hiit_session_1,,text,"41. Peak VO2 mL/kg/min",,,,,,,,y,,,,,"Take this value from the cpu screen"
+hiit1_vo2_5060,highintensity_interval_training_hiit_session_1,,text,"42. 50% - 60% VO2 mL/kg/min",,,,,,,,y,,,,,"Calculate this value by multiplying the Peak VO2 by the percentage (ex. Peak VO2=39.1, so 39.1*.50 or 39.1*.60)"
+hiit1_vo2_7075,highintensity_interval_training_hiit_session_1,,text,"43. 70% - 75% VO2 mL/kg/min",,,,,,,,y,,,,,"Calculate this value by multiplying the Peak VO2 by the percentage (ex. Peak VO2=39.1, so 39.1*.70 or 39.1*.75)"
+hiit1_vo2_8085,highintensity_interval_training_hiit_session_1,,text,"44. 80% - 85% VO2 mL/kg/min",,,,,,,,y,,,,,"Calculate this value by multiplying the Peak VO2 by the percentage (ex. Peak VO2=39.1, so 39.1*.80 or 39.1*.85)"
+hiit1_vo2_9095,highintensity_interval_training_hiit_session_1,,text,"45. 90% - 95% VO2 mL/kg/min",,,,,,,,y,,,,,"Calculate this value by multiplying the Peak VO2 by the percentage (ex. Peak VO2=39.1, so 39.1*.90 or 39.1*.95)"
+hiit1_hr_peak,highintensity_interval_training_hiit_session_1,"Heart Rate (HR) bpm",text,"46. Peak HR bpm",,,,,,,,y,,,,,"Take value from cpu screen"
+hiit1_hr_5060,highintensity_interval_training_hiit_session_1,,text,"47. 50% - 60% HR peak (bpm)",,,,,,,,y,,,,,"We get these values from the sliders on the cpu (15sec intervals)"
+hiit1_hr_7075,highintensity_interval_training_hiit_session_1,,text,"48. 70% - 75% HR peak (bpm)",,,,,,,,y,,,,,"We get these values from the sliders on the cpu (15sec intervals)"
+hiit1_hr_8085,highintensity_interval_training_hiit_session_1,,text,"49. 80% - 85% HR peak (bpm)",,,,,,,,y,,,,,"We get these values from the sliders on the cpu (15sec intervals)"
+hiit1_hr_9095,highintensity_interval_training_hiit_session_1,,text,"50. 90% - 95% HR peak (bpm)",,,,,,,,y,,,,,"We get these values from the sliders on the cpu (15sec intervals)"
+hiit1_notes,highintensity_interval_training_hiit_session_1,,notes,,,,,,,,,,,,,,
+hiit2_date,highintensity_interval_training_hiit_session_2,,text,"1. Date Participant Performed High-Intensity Interval Training",,,date_dmy,,,,,y,,,,,
+hiit2_time,highintensity_interval_training_hiit_session_2,,text,"2. Time Participant Performed High-Intensity Interval Training",,,time,,,,,y,,,,,
+hiit2_bike_disinfected,highintensity_interval_training_hiit_session_2,,yesno,"3. Was Stationary Bike Sanitized/Disinfected Prior To Use?",,,,,,,,y,,,,,
+hiit2_seat_rung,highintensity_interval_training_hiit_session_2,,text,"4. Which Rung Was Seat Height Adjusted To?",,,,,,,,y,,,,,
+hiit2_hr,highintensity_interval_training_hiit_session_2,"WARM-UP PHASE (0min - 4:59min)",text,"5. HR (bpm)",,,,,,,,y,,,,,"Record Value At 4:45"
+hiit2_gear,highintensity_interval_training_hiit_session_2,,text,"6. Gear",,,,,,,,y,,,,,"Record Value At 4:45"
+hiit2_watts,highintensity_interval_training_hiit_session_2,,text,"7. Watts",,,,,,,,y,,,,,
+hiit2_rpe,highintensity_interval_training_hiit_session_2,,text,"8. RPE (6-20)",,,,,,,,y,,,,,"Record Value At 4:45"
+hiit2_hr_2,highintensity_interval_training_hiit_session_2,"EXERCISE PHASE 1 (5min - 8:59min)",text,"9. HR (bpm)",,,,,,,,y,,,,,"Record Value At 8:45"
+hiit2_gear_2,highintensity_interval_training_hiit_session_2,,text,"10. Gear",,,,,,,,y,,,,,"Record Value At 8:45"
+hiit2_watts_2,highintensity_interval_training_hiit_session_2,,text,"11. Watts",,,,,,,,y,,,,,
+hiit2_rpe_2,highintensity_interval_training_hiit_session_2,,text,"12. RPE (6-20)",,,,,,,,y,,,,,"Record Value At 8:45"
+hiit2_hr_3,highintensity_interval_training_hiit_session_2,"RECOVERY PHASE 1 (9min - 11:59min)",text,"13. HR (bpm)",,,,,,,,y,,,,,"Record Value At 11:45"
+hiit2_gear_3,highintensity_interval_training_hiit_session_2,,text,"14. Gear",,,,,,,,y,,,,,"Record Value At 11:45"
+hiit2_watts_3,highintensity_interval_training_hiit_session_2,,text,"15. Watts",,,,,,,,y,,,,,
+hiit2_rpe_3,highintensity_interval_training_hiit_session_2,,text,"16. RPE (6-20)",,,,,,,,y,,,,,"Record Value At 11:45"
+hiit2_hr_4,highintensity_interval_training_hiit_session_2,"EXERCISE PHASE 2 (12min - 15:59)",text,"17. HR (bpm)",,,,,,,,y,,,,,"Record Value At 15:45"
+hiit2_gear_4,highintensity_interval_training_hiit_session_2,,text,"18. Gear",,,,,,,,y,,,,,"Record Value At 15:45"
+hiit2_watts_4,highintensity_interval_training_hiit_session_2,,text,"19. Watts",,,,,,,,y,,,,,
+hiit2_rpe_4,highintensity_interval_training_hiit_session_2,,text,"20. RPE (6-20)",,,,,,,,y,,,,,"Record Value At 15:45"
+hiit2_hr_5,highintensity_interval_training_hiit_session_2,"RECOVERY PHASE 2 (16min - 18:59min)",text,"21. HR (bpm)",,,,,,,,y,,,,,"Record Value At 18:45"
+hiit2_gear_5,highintensity_interval_training_hiit_session_2,,text,"22. Gear",,,,,,,,y,,,,,"Record Value At 18:45"
+hiit2_watts_5,highintensity_interval_training_hiit_session_2,,text,"23. Watts",,,,,,,,y,,,,,
+hiit2_rpe_5,highintensity_interval_training_hiit_session_2,,text,"24. RPE (6-20)",,,,,,,,y,,,,,"Record Value At 18:45"
+hiit2_hr_6,highintensity_interval_training_hiit_session_2,"EXERCISE PHASE 3 (19min - 22:59)",text,"25. HR (bpm)",,,,,,,,y,,,,,"Record Value At 22:45"
+hiit2_gear_6,highintensity_interval_training_hiit_session_2,,text,"26. Gear",,,,,,,,y,,,,,"Record Value At 22:45"
+hiit2_watts_6,highintensity_interval_training_hiit_session_2,,text,"27. Watts",,,,,,,,y,,,,,
+hiit2_rpe_6,highintensity_interval_training_hiit_session_2,,text,"28. RPE (6-20)",,,,,,,,y,,,,,"Record Value At  22:45"
+hiit2_hr_7,highintensity_interval_training_hiit_session_2,"RECOVERY PHASE 3 (23min - 25:59min)",text,"29. HR (bpm)",,,,,,,,y,,,,,"Record Value At 25:45"
+hiit2_gear_7,highintensity_interval_training_hiit_session_2,,text,"30. Gear",,,,,,,,y,,,,,"Record Value At 25:45"
+hiit2_watts_7,highintensity_interval_training_hiit_session_2,,text,"31. Watts",,,,,,,,y,,,,,
+hiit2_rpe_7,highintensity_interval_training_hiit_session_2,,text,"32. RPE (6-20)",,,,,,,,y,,,,,"Record Value At  25:45"
+hiit2_hr_8,highintensity_interval_training_hiit_session_2,"EXERCISE PHASE 4 (26min - 29:59)",text,"33. HR (bpm)",,,,,,,,y,,,,,"Record Value At 29:45"
+hiit2_gear_8,highintensity_interval_training_hiit_session_2,,text,"34. Gear",,,,,,,,y,,,,,"Record Value At 29:45"
+hiit2_watts_8,highintensity_interval_training_hiit_session_2,,text,"35. Watts",,,,,,,,y,,,,,
+hiit2_rpe_8,highintensity_interval_training_hiit_session_2,,text,"36. RPE (6-20)",,,,,,,,y,,,,,"Record Value At  29:45"
+hiit2_hr_9,highintensity_interval_training_hiit_session_2,"RECOVERY PHASE 4 (30min - 33:59min)",text,"37. HR (bpm)",,,,,,,,y,,,,,"Record Value At 33:45"
+hiit2_gear_9,highintensity_interval_training_hiit_session_2,,text,"38. Gear",,,,,,,,y,,,,,"Record Value At 33:45"
+hiit2_watts_9,highintensity_interval_training_hiit_session_2,,text,"39. Watts",,,,,,,,y,,,,,
+hiit2_rpe_9,highintensity_interval_training_hiit_session_2,,text,"40. RPE (6-20)",,,,,,,,y,,,,,"Record Value At  33:45"
+hiit2_vo2_peak,highintensity_interval_training_hiit_session_2,,text,"41. Peak VO2 mL/kg/min",,,,,,,,y,,,,,"Take this value from the cpu screen"
+hiit2_vo2_5060,highintensity_interval_training_hiit_session_2,,text,"42. 50% - 60% VO2 mL/kg/min",,,,,,,,y,,,,,"We get these values from the sliders on the cpu (15sec intervals)"
+hiit2_vo2_7075,highintensity_interval_training_hiit_session_2,,text,"43. 70% - 75% VO2 mL/kg/min",,,,,,,,y,,,,,"We get these values from the sliders on the cpu (15sec intervals)"
+hiit2_vo2_8085,highintensity_interval_training_hiit_session_2,,text,"44. 80% - 85% VO2 mL/kg/min",,,,,,,,y,,,,,"We get these values from the sliders on the cpu (15sec intervals)"
+hiit2_vo2_9095,highintensity_interval_training_hiit_session_2,,text,"45. 90% - 95% VO2 mL/kg/min",,,,,,,,y,,,,,"We get these values from the sliders on the cpu (15sec intervals)"
+hiit2_hr_peak,highintensity_interval_training_hiit_session_2,"Heart Rate (HR) bpm",text,"46. Peak HR bpm",,,,,,,,y,,,,,"Take value from cpu screen"
+hiit2_hr_5060,highintensity_interval_training_hiit_session_2,,text,"47. 50% - 60% HR peak (bpm)",,,,,,,,y,,,,,"Calculate this value by multiplying the Peak VO2 by the percentage (ex. Peak VO2=39.1, so 39.1*.50 or 39.1*.60)"
+hiit2_hr_7075,highintensity_interval_training_hiit_session_2,,text,"48. 70% - 75% HR peak (bpm)",,,,,,,,y,,,,,"Calculate this value by multiplying the Peak VO2 by the percentage (ex. Peak VO2=39.1, so 39.1*.70 or 39.1*.75)"
+hiit2_hr_8085,highintensity_interval_training_hiit_session_2,,text,"49. 80% - 85% HR peak (bpm)",,,,,,,,y,,,,,"Calculate this value by multiplying the Peak VO2 by the percentage (ex. Peak VO2=39.1, so 39.1*.80 or 39.1*.85)"
+hiit2_hr_9095,highintensity_interval_training_hiit_session_2,,text,"50. 90% - 95% HR peak (bpm)",,,,,,,,y,,,,,"Calculate this value by multiplying the Peak VO2 by the percentage (ex. Peak VO2=39.1, so 39.1*.90 or 39.1*.95)"
+hiit2_notes,highintensity_interval_training_hiit_session_2,,notes,,,,,,,,,,,,,,
+hiit3_date,highintensity_interval_training_hiit_session_3,,text,"1. Date Participant Performed High-Intensity Interval Training",,,date_dmy,,,,,y,,,,,
+hiit3_time,highintensity_interval_training_hiit_session_3,,text,"2. Time Participant Performed High-Intensity Interval Training",,,time,,,,,y,,,,,
+hiit3_bike_disinfected,highintensity_interval_training_hiit_session_3,,yesno,"3. Was Stationary Bike Sanitized/Disinfected Prior To Use?",,,,,,,,y,,,,,
+hiit3_seat_rung,highintensity_interval_training_hiit_session_3,,text,"4. Which Rung Was Seat Height Adjusted To?",,,,,,,,y,,,,,
+hiit3_hr,highintensity_interval_training_hiit_session_3,"WARM-UP PHASE (0min - 4:59min)",text,"5. HR (bpm)",,,,,,,,y,,,,,"Record Value At 4:45"
+hiit3_gear,highintensity_interval_training_hiit_session_3,,text,"6. Gear",,,,,,,,y,,,,,"Record Value At 4:45"
+hiit3_watts,highintensity_interval_training_hiit_session_3,,text,"7. Watts",,,,,,,,y,,,,,
+hiit3_rpe,highintensity_interval_training_hiit_session_3,,text,"8. RPE (6-20)",,,,,,,,y,,,,,"Record Value At 4:45"
+hiit3_hr_2,highintensity_interval_training_hiit_session_3,"EXERCISE PHASE 1 (5min - 8:59min)",text,"9. HR (bpm)",,,,,,,,y,,,,,"Record Value At 8:45"
+hiit3_gear_2,highintensity_interval_training_hiit_session_3,,text,"10. Gear",,,,,,,,y,,,,,"Record Value At 8:45"
+hiit3_watts_2,highintensity_interval_training_hiit_session_3,,text,"11. Watts",,,,,,,,y,,,,,
+hiit3_rpe_2,highintensity_interval_training_hiit_session_3,,text,"12. RPE (6-20)",,,,,,,,y,,,,,"Record Value At 8:45"
+hiit3_hr_3,highintensity_interval_training_hiit_session_3,"RECOVERY PHASE 1 (9min - 11:59min)",text,"13. HR (bpm)",,,,,,,,y,,,,,"Record Value At 11:45"
+hiit3_gear_3,highintensity_interval_training_hiit_session_3,,text,"14. Gear",,,,,,,,y,,,,,"Record Value At 11:45"
+hiit3_watts_3,highintensity_interval_training_hiit_session_3,,text,"15. Watts",,,,,,,,y,,,,,
+hiit3_rpe_3,highintensity_interval_training_hiit_session_3,,text,"16. RPE (6-20)",,,,,,,,y,,,,,"Record Value At 11:45"
+hiit3_hr_4,highintensity_interval_training_hiit_session_3,"EXERCISE PHASE 2 (12min - 15:59)",text,"17. HR (bpm)",,,,,,,,y,,,,,"Record Value At 15:45"
+hiit3_gear_4,highintensity_interval_training_hiit_session_3,,text,"18. Gear",,,,,,,,y,,,,,"Record Value At 15:45"
+hiit3_watts_4,highintensity_interval_training_hiit_session_3,,text,"19. Watts",,,,,,,,y,,,,,
+hiit3_rpe_4,highintensity_interval_training_hiit_session_3,,text,"20. RPE (6-20)",,,,,,,,y,,,,,"Record Value At 15:45"
+hiit3_hr_5,highintensity_interval_training_hiit_session_3,"RECOVERY PHASE 2 (16min - 18:59min)",text,"21. HR (bpm)",,,,,,,,y,,,,,"Record Value At 18:45"
+hiit3_gear_5,highintensity_interval_training_hiit_session_3,,text,"22. Gear",,,,,,,,y,,,,,"Record Value At 18:45"
+hiit3_watts_5,highintensity_interval_training_hiit_session_3,,text,"23. Watts",,,,,,,,y,,,,,
+hiit3_rpe_5,highintensity_interval_training_hiit_session_3,,text,"24. RPE (6-20)",,,,,,,,y,,,,,"Record Value At 18:45"
+hiit3_hr_6,highintensity_interval_training_hiit_session_3,"EXERCISE PHASE 3 (19min - 22:59)",text,"25. HR (bpm)",,,,,,,,y,,,,,"Record Value At 22:45"
+hiit3_gear_6,highintensity_interval_training_hiit_session_3,,text,"26. Gear",,,,,,,,y,,,,,"Record Value At 22:45"
+hiit3_watts_6,highintensity_interval_training_hiit_session_3,,text,"27. Watts",,,,,,,,y,,,,,
+hiit3_rpe_6,highintensity_interval_training_hiit_session_3,,text,"28. RPE (6-20)",,,,,,,,y,,,,,"Record Value At  22:45"
+hiit3_hr_7,highintensity_interval_training_hiit_session_3,"RECOVERY PHASE 3 (23min - 25:59min)",text,"29. HR (bpm)",,,,,,,,y,,,,,"Record Value At 25:45"
+hiit3_gear_7,highintensity_interval_training_hiit_session_3,,text,"30. Gear",,,,,,,,y,,,,,"Record Value At 25:45"
+hiit3_watts_7,highintensity_interval_training_hiit_session_3,,text,"31. Watts",,,,,,,,y,,,,,
+hiit3_rpe_7,highintensity_interval_training_hiit_session_3,,text,"32. RPE (6-20)",,,,,,,,y,,,,,"Record Value At  25:45"
+hiit3_hr_8,highintensity_interval_training_hiit_session_3,"EXERCISE PHASE 4 (26min - 29:59)",text,"33. HR (bpm)",,,,,,,,y,,,,,"Record Value At 29:45"
+hiit3_gear_8,highintensity_interval_training_hiit_session_3,,text,"34. Gear",,,,,,,,y,,,,,"Record Value At 29:45"
+hiit3_watts_8,highintensity_interval_training_hiit_session_3,,text,"35. Watts",,,,,,,,y,,,,,
+hiit3_rpe_8,highintensity_interval_training_hiit_session_3,,text,"36. RPE (6-20)",,,,,,,,y,,,,,"Record Value At  29:45"
+hiit3_hr_9,highintensity_interval_training_hiit_session_3,"RECOVERY PHASE 4 (30min - 33:59min)",text,"37. HR (bpm)",,,,,,,,y,,,,,"Record Value At 33:45"
+hiit3_gear_9,highintensity_interval_training_hiit_session_3,,text,"38. Gear",,,,,,,,y,,,,,"Record Value At 33:45"
+hiit3_watts_9,highintensity_interval_training_hiit_session_3,,text,"39. Watts",,,,,,,,y,,,,,
+hiit3_rpe_9,highintensity_interval_training_hiit_session_3,,text,"40. RPE (6-20)",,,,,,,,y,,,,,"Record Value At  33:45"
+hiit3_vo2_peak,highintensity_interval_training_hiit_session_3,,text,"41. Peak VO2 mL/kg/min",,,,,,,,y,,,,,"Take this value from the cpu screen"
+hiit3_vo2_5060,highintensity_interval_training_hiit_session_3,,text,"42. 50% - 60% VO2 mL/kg/min",,,,,,,,y,,,,,"We get these values from the sliders on the cpu (15sec intervals)"
+hiit3_vo2_7075,highintensity_interval_training_hiit_session_3,,text,"43. 70% - 75% VO2 mL/kg/min",,,,,,,,y,,,,,"We get these values from the sliders on the cpu (15sec intervals)"
+hiit3_vo2_8085,highintensity_interval_training_hiit_session_3,,text,"44. 80% - 85% VO2 mL/kg/min",,,,,,,,y,,,,,"We get these values from the sliders on the cpu (15sec intervals)"
+hiit3_vo2_9095,highintensity_interval_training_hiit_session_3,,text,"45. 90% - 95% VO2 mL/kg/min",,,,,,,,y,,,,,"We get these values from the sliders on the cpu (15sec intervals)"
+hiit3_hr_peak,highintensity_interval_training_hiit_session_3,"Heart Rate (HR) bpm",text,"46. Peak HR bpm",,,,,,,,y,,,,,"Take value from cpu screen"
+hiit3_hr_5060,highintensity_interval_training_hiit_session_3,,text,"47. 50% - 60% HR peak (bpm)",,,,,,,,y,,,,,"Calculate this value by multiplying the Peak VO2 by the percentage (ex. Peak VO2=39.1, so 39.1*.50 or 39.1*.60)"
+hiit3_hr_7075,highintensity_interval_training_hiit_session_3,,text,"48. 70% - 75% HR peak (bpm)",,,,,,,,y,,,,,"Calculate this value by multiplying the Peak VO2 by the percentage (ex. Peak VO2=39.1, so 39.1*.70 or 39.1*.75)"
+hiit3_hr_8085,highintensity_interval_training_hiit_session_3,,text,"49. 80% - 85% HR peak (bpm)",,,,,,,,y,,,,,"Calculate this value by multiplying the Peak VO2 by the percentage (ex. Peak VO2=39.1, so 39.1*.80 or 39.1*.85)"
+hiit3_hr_9095,highintensity_interval_training_hiit_session_3,,text,"50. 90% - 95% HR peak (bpm)",,,,,,,,y,,,,,"Calculate this value by multiplying the Peak VO2 by the percentage (ex. Peak VO2=39.1, so 39.1*.90 or 39.1*.95)"
+hiit3_notes,highintensity_interval_training_hiit_session_3,,notes,,,,,,,,,,,,,,
+adverse,adverseserious_adverse_events,,yesno,"1. Did Participant Report Any Adverse Events?",,,,,,,,y,,,,,
+adverse_date,adverseserious_adverse_events,,text,"2. If Yes, What Was The Date Of The Adverse Event?",,,date_dmy,,,,,,,,,,
+adverse_description,adverseserious_adverse_events,,notes,"3. Description Of The Adverse Event",,,,,,,,,,,,,
+adverse_report_date,adverseserious_adverse_events,,text,"4. When Was The Adverse Event Reported To Clinical Personnel",,,date_dmy,,,,,,,,,,
+adverse_outcome,adverseserious_adverse_events,,notes,"5. Adverse Event Outcome",,,,,,,,,,,,,
+adverse_ongoing,adverseserious_adverse_events,,yesno,"6. Is The Adverse Event Still Ongoing?",,,,,,,,,,,,,
+adverse_serious,adverseserious_adverse_events,,yesno,"7. Did Participant Report Any Serious Adverse Events?",,,,,,,,y,,,,,
+adverse_date_serious,adverseserious_adverse_events,,text,"8. If Yes, What Was The Date Of The Serious Adverse Event?",,,date_dmy,,,,,,,,,,
+adverse_description_serious,adverseserious_adverse_events,,notes,"9. Description Of The Serious Adverse Event",,,,,,,,,,,,,
+adverse_report_date_serious,adverseserious_adverse_events,,text,"10. When Was The Serious Adverse Event Reported To Clinical Personnel",,,date_dmy,,,,,,,,,,
+adverse_outcome_serious,adverseserious_adverse_events,,notes,"11. Serious Adverse Event Outcome",,,,,,,,,,,,,
+adverse_ongoing_serious,adverseserious_adverse_events,,yesno,"12. Is The Serious Adverse Event Still Ongoing?",,,,,,,,,,,,,
+frailty_weight_loss,physical_frailty_phenotype,"UNINTENTIONAL WEIGHT LOSS",yesno,"1. Has Participant Reported Any Unintentional Weight Loss Between Any Major Study Time Points ?",,,,,,,,y,,,,,"Meets criteria for weight loss if: (Lost, ≥10 lbs, ≥5% of body mass or, BMI < 18.5kg/m2)"
+frailty_tired_during_day,physical_frailty_phenotype,"EXHAUSTION                                                      ",radio,"2. ""In The Past Month, On The Average, Have You Been Feeling Unusually Tired During The Day?""","1, Yes | 2, No | 3, Don't Know | 4, Refused",,,,,,,y,,,,,"Meets criteria for exhaustion if answer: Felt unusually tired or unusually weak 'all of the time' or 'most of the time' or reported energy level was ≤3"
+frailty_unusually_tired,physical_frailty_phenotype,,radio,"2a.  ""If Yes, Have You Been Feeling Unusually Tired:""","1, All Of The Time | 2, Most Of The Time | 3, Some Of The Time | 4, Refused/Don't Know",,,,,,"[frailty_tired_during_day] = '1'",,,,,,"Meets criteria for exhaustion if answer: Felt unusually tired or unusually weak 'all of the time' or 'most of the time' or reported energy level was ≤3"
+frailty_unusually_weak,physical_frailty_phenotype,,radio,"2b. ""In The Past Month, On The Average, Have You Felt Unusually Weak?""","1, Yes | 2, No | 3, Refused | 4, Don't Know",,,,,,,y,,,,,"Meets criteria for exhaustion if answer: Felt unusually tired or unusually weak 'all of the time' or 'most of the time' or reported energy level was ≤3"
+frailty_feeling_weak,physical_frailty_phenotype,,radio,"2c."" If Yes, Have You Been Feeling Weak:""","1, All Of The Time | 2, Most Of The time | 3, Some Of The Time | 4, Refused/Don't Know",,,,,,"[frailty_unusually_weak] = '1'",,,,,,"Meets criteria for exhaustion if answer: Felt unusually tired or unusually weak 'all of the time' or 'most of the time' or reported energy level was ≤3"
+frailty_energy_scale,physical_frailty_phenotype,,radio,"2d. Please Rate Your Usual Energy Level On A Scale From 0 To 10 Where 0 Is No Energy And 10 Is The Most Energy That You Have Ever Had. Please Give A Number Between 0 And 10 That Describes Your Usual Energy Level While Awake In The Last Month?""","1, 0 (No Energy) | 2, 1 | 3, 2 | 4, 3 | 5, 4 | 6, 5 | 7, 6 | 8, 7 | 9, 8 | 10, 9 | 11, 10 (The Most Energy You've Ever Had)",,,,,,,y,,,,,"Meets criteria for exhaustion if answer: Felt unusually tired or unusually weak 'all of the time' or 'most of the time' or reported energy level was ≤3"
+frailty_slow_walk_speed,physical_frailty_phenotype,"SLOWNESS
+
+Meets Criteria for Slow Walking Speed over 3 Meters if:
+
+Men:                                                                                                          
+≤0.65m/s for height ≤173 cm (68 inches) (5ft. 6in.)                                          
+≤0.76m/s for height >173 cm (68 inches) (5ft. 6in.) 
+*Men with a height of 173 cm or less: A walking time of 4.59 seconds or more over 3 meters is considered slow.
+*Men with a height greater than 173 cm: A walking time of 3.93 seconds or more over 3 meters is considered slow.
+                                                                                                  
+Women:
+≤0.65m/s for height ≤159cm (63 inches) (5ft. 2in.) 
+≤0.76m/s for height >159cm (63 inches) (5ft. 2in.) 
+*Women with a height of 159 cm or less: A walking time of 4.59 seconds or more over 3 meters is considered slow.
+*Women with a height greater than 159 cm: A walking time of 3.93 seconds or more over 3 meters is considered slow.
+
+",yesno,"3. Does Participant Meet Criteria For Slow Walking Speed?",,,,,,,,y,,,,,"Participant attempts to walk 3-meter length three times at his or her usual pace. Use average of 3 trials."
+frailty_low_activity,physical_frailty_phenotype,"LOW ACTIVITY LEVEL
+
+Meets criteria for low activity if:
+
+Men: < 128 kcal of physical expenditure on activity scale per week 
+Women: < 90 kcal of physical expenditure on activity scale per week ",yesno,"4. Does Participant Meet Criteria For Low Activity",,,,,,,,y,,,,,
+frailty_grip_strength,physical_frailty_phenotype,"WEAKNESS
+
+Meets Criteria For Grip Strength Weakness If:
+
+Men
+≤29 kg for BMI ≤24
+≤30 kg for BMI 24.1-26
+≤30 kg for BMI 26.1-28
+≤32 kg for BMI >28
+
+Women
+≤17 kg for BMI ≤23
+≤17.3 kg for BMI 23.1-26
+≤18 kg for BMI 26.1-29
+≤21 kg for BMI >29
+",yesno,"5. Does Participant Meet Criteria For grip Strength Weakness?",,,,,,,,y,,,,,"Participant will squeeze the dynamometer maximally 3 times with each hand. Use maximal score of each hand."
+frailty_phenotype,physical_frailty_phenotype,"SCORING:
+
+≥3/5 Criteria Met Indicates Frailty
+
+1-2/5 Indicates Pre-or-Intermediate Frailty
+
+0/5 Indicates Non-Frail",radio,"6. What Is Participant Overall Physical Frailty Phenotype?","1, Frail | 2, Pre-Frail | 3, Non-Frail",,,,,,,y,,,,,
+frailty_phenotype_important_notes,physical_frailty_phenotype,,notes,,,,,,,,,,,,,,
