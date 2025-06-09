@@ -67,25 +67,32 @@ df <- df[1:63,]
 names(df) <- c("rf", "vo2", "hr", "watts")
 
 df1 <- df %>%
-  mutate(smooth_y = predict(lm(hr ~ vo2), data = df))
+  mutate(smooth_y = predict(gam(hr ~ s(vo2, bs = "cs"), data = df))) %>%
+  mutate(lm_y = predict(lm(hr ~ vo2), data = df))
 
+#No Transform
+quantile(df$vo2, probs = .99)
 max(df$vo2)
 
 vo2.range <- data.frame(per = c(.7, .75, .8, .85, .9, .95))
 
-vo2.range$vo2 <- vo2.range$per*23.305
+vo2.range$vo2 <- vo2.range$per*23.28743
 
 # Fit a LOESS model
 #loess_model <- loess(hr ~ vo2, data = df)
-loess_model <- lm(hr ~ vo2, data = df)
+loess_model <- loess(hr ~ vo2, data = df)
+lm_model <- lm(hr ~ vo2, data = df)
 
 # Predict the y-value at the 70th percentile
 vo2.range$hr <- predict(loess_model, newdata = vo2.range)
+vo2.range$hrlm <- predict(lm_model, newdata = vo2.range)
+AIC(loess_model, lm_model)
 
 ggplot(df, aes(x = vo2, y = hr)) +
   geom_point(data = df, aes(color = watts)) +
   scale_color_gradient(low = "yellow", high = "red")+
-  geom_smooth(color = "black", method = "lm") +
+  geom_smooth(color = "black") +
+  geom_smooth(color = "blue", method = "lm") +
   geom_point(data = vo2.range, aes(x = vo2, y = hr), color = "black", size = 3) +
   geom_rect(aes(xmin = -Inf, xmax = Inf, ymin = vo2.range[1,3], ymax = vo2.range[2,3]), fill = "lightblue", alpha = 0.02) +
   geom_rect(aes(xmin = -Inf, xmax = Inf, ymin = vo2.range[3,3], ymax = vo2.range[4,3]), fill = "purple", alpha = 0.02) +
@@ -99,7 +106,7 @@ ggplot(df, aes(x = vo2, y = hr)) +
   annotate("text", x = 9, y = (vo2.range[5,3] + vo2.range[6,3])/2, hjust = 0, 
            label = paste("90-95% VO2 Max (", round(vo2.range[5,3]), "-", round(vo2.range[6,3]), " bpm)", sep = "")) +
   #annotate("text", x = 10, y = vo2.range[6,2], label = round(vo2.range[6,2])) +
-  geom_hline(yintercept = vo2.range$y) +
+  geom_hline(yintercept = vo2.range$hr) +
   labs(title = "Terrell's VO2 Max") +
   theme_pubr()
   
