@@ -63,12 +63,12 @@ df1 <- df1 %>%
   mutate(smooth_y = predict(gam(hr ~ s(vo2, bs = "cs"), data = df))) %>%
   mutate(lm_y = predict(lm(hr ~ vo2), data = df))
 
-quantile(df1$vo2, probs = .95)
+quantile(df1$vo2, probs = .99)
 
 
 vo2.range <- data.frame(per = c(.7, .75, .8, .85, .9, .95))
 
-vo2.range$vo2 <- vo2.range$per*22.2725
+vo2.range$vo2 <- vo2.range$per*25.496
 
 # Fit a LOESS model
 loess_model <- loess(hr ~ vo2, data = df1)
