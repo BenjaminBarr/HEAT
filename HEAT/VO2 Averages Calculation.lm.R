@@ -86,7 +86,6 @@ lm_model <- lm(hr ~ vo2, data = df)
 # Predict the y-value at the 70th percentile
 vo2.range$hr <- predict(loess_model, newdata = vo2.range)
 vo2.range$hrlm <- predict(lm_model, newdata = vo2.range)
-AIC(loess_model, lm_model)
 
 ggplot(df, aes(x = vo2, y = hr)) +
   geom_point(data = df, aes(color = watts)) +
