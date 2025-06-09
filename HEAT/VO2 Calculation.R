@@ -60,19 +60,23 @@ is.na(df1$hr)
 df1
 
 df1 <- df1 %>%
-  mutate(smooth_y = predict(gam(hr ~ s(vo2, bs = "cs"), data = df1)))
+  mutate(smooth_y = predict(gam(hr ~ s(vo2, bs = "cs"), data = df))) %>%
+  mutate(lm_y = predict(lm(hr ~ vo2), data = df))
 
-quantile(df1$vo2, probs = .99)
+quantile(df1$vo2, probs = .95)
+
 
 vo2.range <- data.frame(per = c(.7, .75, .8, .85, .9, .95))
 
-vo2.range$vo2 <- vo2.range$per*25.496
+vo2.range$vo2 <- vo2.range$per*22.2725
 
 # Fit a LOESS model
 loess_model <- loess(hr ~ vo2, data = df1)
+lm_model <- lm(hr~vo2, data = df1)
 
 # Predict the y-value at the 70th percentile
 vo2.range$hr <- predict(loess_model, newdata = vo2.range)
+vo2.range$hrlm <- predict(lm_model, newdata = vo2.range)
 
 ggplot(df1, aes(x = vo2, y = hr)) +
   geom_point(data = df1, aes(color = power)) + 
