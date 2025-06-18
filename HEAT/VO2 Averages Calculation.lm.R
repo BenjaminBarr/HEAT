@@ -93,17 +93,17 @@ ggplot(df, aes(x = vo2, y = hr)) +
   #geom_smooth(color = "black") +
   geom_smooth(color = "blue", method = "lm") +
   geom_point(data = vo2.range, aes(x = vo2, y = hrlm), color = "black", size = 3) +
-  geom_rect(aes(xmin = -Inf, xmax = Inf, ymin = vo2.range[1,4], ymax = vo2.range[2,4]), fill = "lightblue", alpha = 0.02) +
-  geom_rect(aes(xmin = -Inf, xmax = Inf, ymin = vo2.range[3,4], ymax = vo2.range[4,4]), fill = "purple", alpha = 0.02) +
-  geom_rect(aes(xmin = -Inf, xmax = Inf, ymin = vo2.range[5,4], ymax = vo2.range[6,4]), fill = "green", alpha = 0.01) +
-  annotate("text", x = 9, y = (vo2.range[1,4] + vo2.range[2,4])/2, hjust = 0,
-           label = paste("70-75% VO2 Max (", round(vo2.range[1,4]), "-", round(vo2.range[2,4]), " bpm)", sep = "")) +
+  geom_rect(aes(xmin = -Inf, xmax = Inf, ymin = vo2.range[1,3], ymax = vo2.range[2,3]), fill = "lightblue", alpha = 0.02) +
+  geom_rect(aes(xmin = -Inf, xmax = Inf, ymin = vo2.range[3,3], ymax = vo2.range[4,3]), fill = "purple", alpha = 0.02) +
+  geom_rect(aes(xmin = -Inf, xmax = Inf, ymin = vo2.range[5,3], ymax = vo2.range[6,3]), fill = "green", alpha = 0.01) +
+  annotate("text", x = 9, y = (vo2.range[1,3] + vo2.range[2,3])/2, hjust = 0,
+           label = paste("70-75% VO2 Max (", round(vo2.range[1,3]), "-", round(vo2.range[2,3]), " bpm)", sep = "")) +
   #annotate("text", x = 5, y = vo2.range[2,2], label = round(vo2.range[2,2])) +
-  annotate("text", x = 9, y = (vo2.range[3,4] + vo2.range[4,4])/2, hjust = 0,
-           label = paste("80-85% VO2 Max (", round(vo2.range[3,4]), "-", round(vo2.range[4,4]), " bpm)", sep = "")) +
+  annotate("text", x = 9, y = (vo2.range[3,3] + vo2.range[4,3])/2, hjust = 0,
+           label = paste("80-85% VO2 Max (", round(vo2.range[3,3]), "-", round(vo2.range[4,3]), " bpm)", sep = "")) +
   #annotate("text", x = 7.5, y = vo2.range[4,2], label = round(vo2.range[4,2])) +
-  annotate("text", x = 9, y = (vo2.range[5,4] + vo2.range[6,4])/2, hjust = 0, 
-           label = paste("90-95% VO2 Max (", round(vo2.range[5,4]), "-", round(vo2.range[6,4]), " bpm)", sep = "")) +
+  annotate("text", x = 9, y = (vo2.range[5,3] + vo2.range[6,3])/2, hjust = 0, 
+           label = paste("90-95% VO2 Max (", round(vo2.range[5,3]), "-", round(vo2.range[6,3]), " bpm)", sep = "")) +
   #annotate("text", x = 10, y = vo2.range[6,2], label = round(vo2.range[6,2])) +
   geom_hline(yintercept = vo2.range$hrlm) +
   labs(title = "Terrell's VO2 Max") +
